@@ -1,5 +1,5 @@
 /**
- * Ride Ready release settings.
+ * RideReady release settings.
  *
  * To publish an installer:
  * 1. Add the file to public/downloads using the matching file name below.

@@ -5,10 +5,10 @@ Production-ready static website for Chiaro Code, a music education software comp
 ## Pages
 
 - Home, including the complete About Us section
-- Products, featuring Ride Ready and desktop downloads
+- Products, featuring RideReady and desktop downloads
 - Pricing, currently marked TBD
 
-## Add Ride Ready installers
+## Add RideReady installers
 
 1. Copy the Windows installer to `public/downloads/RideReady-Setup.exe`.
 2. Copy the macOS installer to `public/downloads/RideReady.dmg`.

@@ -5,26 +5,34 @@ import { rideReadyDownloads } from '@/lib/ride-ready';
 
 export const metadata: Metadata = {
   title: 'Products',
-  description: 'Meet Ride Ready, the first music education application from Chiaro Code.',
+  description: 'Meet RideReady, a synchronized number calling and display system for ride lines, events, and other live queues.',
 };
 export const dynamic = 'force-static';
 
 const features = [
   {
-    title: 'Purposeful practice',
-    text: 'Students receive a clear musical focus for every session, turning assignments into specific, achievable work.',
+    title: 'Fast number entry',
+    text: 'Enter called numbers from the Controller window. Repeating a number increases its count automatically.',
   },
   {
-    title: 'Thoughtful feedback',
-    text: 'Guidance supports attentive listening and reflection while preserving the student’s own musical judgement.',
+    title: 'Compact live control',
+    text: 'Click a number in the controller grid to decrement its count, or Shift-click to remove it completely.',
   },
   {
-    title: 'Rehearsal readiness',
-    text: 'Educators see where preparation is secure and where focused instruction will make the greatest difference.',
+    title: 'Clear public display',
+    text: 'A fullscreen-friendly grid puts the most frequently called numbers first, with optional count visibility.',
   },
   {
-    title: 'Designed for ensembles',
-    text: 'Individual work remains connected to repertoire, section goals, and the shared responsibility of performance.',
+    title: 'Remote controllers',
+    text: 'Connect a phone or browser over the local network with a QR code, regenerate pairing, or disconnect controllers.',
+  },
+  {
+    title: 'Flexible capacity',
+    text: 'Keep the default limit of 30 unique numbers for a disciplined grid, or disable the limit when an event needs more.',
+  },
+  {
+    title: 'Comfortable in any setting',
+    text: 'Light, dark, and system theme modes keep both working windows legible throughout the day.',
   },
 ];
 
@@ -35,7 +43,7 @@ export default function ProductsPage() {
         <p className="section-label">Products</p>
         <h1 id="products-title">Software in service of the music.</h1>
         <div className="products-hero-bottom">
-          <p className="products-lede">Our product collection begins with one carefully defined tool: Ride Ready, a more considered path from individual practice to collective rehearsal.</p>
+          <p className="products-lede">Our product collection begins with one carefully defined tool: RideReady, a calm, synchronized way to manage called numbers across busy live environments.</p>
           <p className="product-count">Current collection<br />01 product</p>
         </div>
       </section>
@@ -45,7 +53,7 @@ export default function ProductsPage() {
           <Image
             className="product-icon"
             src={sitePath('/images/ride-ready-icon.png')}
-            alt="Ride Ready app icon: a blue car with the numbers four, five, and six"
+            alt="RideReady app icon: a blue car with the numbers four, five, and six"
             width={1080}
             height={1080}
             priority
@@ -54,12 +62,12 @@ export default function ProductsPage() {
         <div className="product-content">
           <span className="product-number">01 / 01</span>
           <div className="product-heading">
-            <span className="product-category">Practice &amp; ensemble readiness</span>
-            <h2 id="ride-ready-title">Ride Ready</h2>
+            <span className="product-category">Live queue control &amp; display</span>
+            <h2 id="ride-ready-title">RideReady</h2>
           </div>
           <div className="product-copy">
-            <p>Ride Ready helps developing musicians arrive prepared. It gives students a focused way to understand, complete, and reflect on their practice while giving educators a clearer view of ensemble readiness before rehearsal begins.</p>
-            <p className="product-audience"><strong>Created for:</strong> student musicians, private teachers, ensemble directors, and school music programs.</p>
+            <p>RideReady is an Electron app for tracking called or entered numbers in real time. A focused Controller window handles entry and changes, while a separate, fullscreen-friendly Display window keeps the live queue visible to everyone. Every update stays synchronized across the controller, display, and connected remote controllers.</p>
+            <p className="product-audience"><strong>Created for:</strong> ride-line coordinators, event teams, schools, and anyone managing a numbered live queue.</p>
           </div>
 
           <div className="feature-list" aria-label="Ride Ready benefits">
@@ -99,7 +107,7 @@ export default function ProductsPage() {
       <section className="products-note" aria-labelledby="product-note-title">
         <div className="products-note-inner shell">
           <p className="section-label">The Chiaro standard</p>
-          <p id="product-note-title">Built for serious learning. Quiet enough to keep the musician’s attention where it belongs.</p>
+          <p id="product-note-title">Built to make a busy queue readable, responsive, and easy to control from wherever the work is happening.</p>
         </div>
       </section>
 
@@ -107,7 +115,7 @@ export default function ProductsPage() {
         <div className="closing-inner shell">
           <div>
             <p className="section-label">Availability</p>
-            <h2 id="pricing-link-title">Plan for Ride Ready.</h2>
+            <h2 id="pricing-link-title">Plan for RideReady.</h2>
           </div>
           <a className="button-link" href={sitePath('/pricing')}>View pricing details</a>
         </div>

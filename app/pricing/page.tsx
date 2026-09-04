@@ -3,7 +3,7 @@ import { sitePath } from '@/lib/base-path';
 
 export const metadata: Metadata = {
   title: 'Pricing',
-  description: 'Pricing information for Ride Ready by Chiaro Code.',
+  description: 'Pricing information for RideReady by Chiaro Code.',
 };
 export const dynamic = 'force-static';
 
@@ -13,7 +13,7 @@ export default function PricingPage() {
       <section className="pricing-hero shell" aria-labelledby="pricing-title">
         <p className="section-label">Pricing</p>
         <h1 id="pricing-title">A clear model is in composition.</h1>
-        <p className="pricing-lede">We are shaping Ride Ready’s pricing to serve individual educators and music institutions with the same care built into the product itself.</p>
+        <p className="pricing-lede">We are shaping RideReady’s pricing to serve individual operators and larger organizations with the same care built into the product itself.</p>
       </section>
 
       <section className="shell pricing-panel" aria-labelledby="pricing-status-title">
@@ -35,7 +35,7 @@ export default function PricingPage() {
               <span>A model designed around sustainable music programs.</span>
             </div>
           </div>
-          <a className="button-link" href={sitePath('/products')}>Return to Ride Ready</a>
+          <a className="button-link" href={sitePath('/products')}>Return to RideReady</a>
         </div>
       </section>
 

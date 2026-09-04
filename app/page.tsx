@@ -90,7 +90,7 @@ export default function HomePage() {
             <p className="section-label">Our first product</p>
             <h2 id="collection-title">Purposeful tools for a lifetime of music.</h2>
           </div>
-          <a className="button-link" href={sitePath('/products')}>Discover Ride Ready</a>
+          <a className="button-link" href={sitePath('/products')}>Discover RideReady</a>
         </div>
       </section>
     </>
