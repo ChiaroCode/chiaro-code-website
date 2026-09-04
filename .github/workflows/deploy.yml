@@ -25,12 +25,9 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Set deployment path
-        run: |
-          if [[ "${{ github.event.repository.name }}" == "${{ github.repository_owner }}.github.io" ]]; then
-            echo "NEXT_PUBLIC_PAGES_BASE_PATH=" >> "$GITHUB_ENV"
-          else
-            echo "NEXT_PUBLIC_PAGES_BASE_PATH=/${{ github.event.repository.name }}" >> "$GITHUB_ENV"
-          fi
+        # A custom domain serves this project at the domain root rather than
+        # beneath /chiaro-code-website, so exported asset URLs need no prefix.
+        run: echo "NEXT_PUBLIC_PAGES_BASE_PATH=" >> "$GITHUB_ENV"
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
