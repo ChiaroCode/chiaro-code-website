@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="footer-main shell">
         <div>
           <span className="footer-brand">Chiaro Code</span>
-          <p>Music education software composed with purpose, precision, and respect for the craft.</p>
+          <p>Frictionless access to music education. Practical tools for the schools that teach and the students ready to create.</p>
         </div>
         <nav aria-label="Footer navigation">
           <a href={sitePath('/')}>Home</a>
@@ -16,7 +16,7 @@ export function SiteFooter() {
         </nav>
       </div>
       <div className="footer-meta shell">
-        <span>For musicians, educators &amp; institutions</span>
+        <span>Fewer barriers. More music.</span>
         <span>© {new Date().getFullYear()} Chiaro Code</span>
       </div>
     </footer>

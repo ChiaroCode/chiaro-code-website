@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { sitePath } from '@/lib/base-path';
 
 const navigation = [
@@ -13,6 +13,8 @@ const navigation = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLButtonElement>(null);
 
   // Close the mobile menu if the viewport returns to the desktop layout.
   useEffect(() => {
@@ -22,14 +24,35 @@ export function SiteHeader() {
     return () => media.removeEventListener('change', closeMenu);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const dismissOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setIsOpen(false);
+      menuRef.current?.focus();
+    };
+    const dismissOutside = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setIsOpen(false);
+    };
+    document.addEventListener('keydown', dismissOnEscape);
+    document.addEventListener('pointerdown', dismissOutside);
+    return () => {
+      document.removeEventListener('keydown', dismissOnEscape);
+      document.removeEventListener('pointerdown', dismissOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef} onBlur={(event) => {
+      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsOpen(false);
+    }}>
       <div className="header-inner shell">
         <a className="brand" href={sitePath('/')} aria-label="Chiaro Code home" onClick={() => setIsOpen(false)}>
           <span className="wordmark">Chiaro Code</span>
         </a>
         <button
           className="menu-button"
+          ref={menuRef}
           type="button"
           aria-expanded={isOpen}
           aria-controls="primary-navigation"
@@ -40,7 +63,9 @@ export function SiteHeader() {
         <nav id="primary-navigation" className={isOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Primary navigation">
           {navigation.map((item) => {
             const target = sitePath(item.href);
-            const isCurrent = pathname === target || (item.href !== '/' && pathname.startsWith(target));
+            const normalizedPath = pathname.replace(/\/$/, '') || '/';
+            const normalizedTarget = target.replace(/\/$/, '') || '/';
+            const isCurrent = normalizedPath === normalizedTarget;
             return (
               <a key={item.href} href={target} aria-current={isCurrent ? 'page' : undefined} onClick={() => setIsOpen(false)}>
                 {item.label}
