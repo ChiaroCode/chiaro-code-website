@@ -1,32 +1,21 @@
 # Chiaro Code
 
-Production-ready static website for Chiaro Code, a music education software company. The site is built with Next-compatible React components and statically exported for fast, low-maintenance hosting.
+Chiaro Code's website presents **Frictionless Access** to music education: less operational friction for schools and fewer hardware barriers for students.
 
 ## Pages
 
-- Home, including the complete About Us section
-- Products, featuring RideReady and desktop downloads
-- Pricing, currently marked TBD
+- Home: mission, vision, and the connection between the two products.
+- Products: RideReady in development; Typing-to-MIDI with setup guidance and published v1.0.0 downloads.
+- Pricing: honest availability for each product, without unannounced pricing promises.
 
-## Add RideReady installers
+## Release policy
 
-1. Copy the Windows installer to `public/downloads/RideReady-Setup.exe`.
-2. Copy the macOS installer to `public/downloads/RideReady.dmg`.
-3. Open `lib/ride-ready.ts` and change the matching platform's `available` value from `false` to `true`.
+RideReady is **not ready to ship**. Do not add downloads, purchasing controls, or release dates without the owner's explicit release decision.
 
-The corresponding download link will then be included automatically the next time the site is built.
+Typing-to-MIDI links are maintained in `lib/typing-to-midi.ts`. Verify release assets and the tagged setup guide when updating them. Keep signing and platform testing notes consistent with the release.
 
-## Local development
+## Development and hosting
 
-```bash
-npm install
-npm run dev
-```
+Run `npm ci`, then `npm run dev`. Run `npx tsc --noEmit` for type checking and `npm run build` for the static export in `dist/client`.
 
-## Production build
-
-```bash
-npm run build
-```
-
-Static output is written to `dist/client`. The included GitHub Actions workflow deploys that directory to GitHub Pages whenever the `main` branch is updated.
+This checkout is linked to the existing Chiaro Code Site through `.openai/hosting.json`; preserve its project ID and current audience. The included GitHub Pages workflow is a separate, existing hosting option.
