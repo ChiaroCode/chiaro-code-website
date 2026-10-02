@@ -2,10 +2,10 @@
 
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import { BrandMark } from '@/components/brand-mark';
 import { sitePath } from '@/lib/base-path';
 
 const navigation = [
-  { href: '/', label: 'Home' },
   { href: '/products', label: 'Products' },
   { href: '/pricing', label: 'Pricing' },
 ];
@@ -48,6 +48,7 @@ export function SiteHeader() {
     }}>
       <div className="header-inner shell">
         <a className="brand" href={sitePath('/')} aria-label="Chiaro Code home" onClick={() => setIsOpen(false)}>
+          <BrandMark />
           <span className="wordmark">Chiaro Code</span>
         </a>
         <button

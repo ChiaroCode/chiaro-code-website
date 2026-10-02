@@ -1,41 +1,78 @@
-# Chiaro Code design review
+# Chiaro Code website design system
 
-Reviewed 29 September 2026. Scope: Home, Products, Pricing, shared navigation and footer. This is an audit and refinement of the existing system, not a new visual identity.
+## Design read
 
-## Direction
+Reading this as a three-page marketing site for schools, music teachers, and students, with a bright sky-glass language and one stage-like story: a planning grid resolves into music at a festival.
 
-Preserve the editorial character: paper-colored surfaces, dark ink, burgundy accents, serif headlines, generous space, and fine rules. The visual hierarchy should support the new **Frictionless Access** proposition without adding ornamental gradients, decorative glass panels, or scroll effects.
+This is an identity refresh over the reconciled site. Keep /, /products, and /pricing, the existing navigation labels and anchor IDs, and all factual product and pricing copy. RideReady remains the lead product. Typing-to-MIDI stays the available student tool.
 
-The audience is schools and students. RideReady addresses operational friction and is explicitly **in development, not ready to ship**. Typing-to-MIDI addresses hardware friction and links to its published v1.0.0 files. The latter requires a receiving instrument and MIDI routing; it is not a sound generator.
+The dials are DESIGN_VARIANCE: 7, MOTION_INTENSITY: 4, and VISUAL_DENSITY: 3. The visual signature is a spreadsheet grid opening into music staff lines, with festival light at the end of that path. The sky and glass cues borrow a feeling from early Aero-era interfaces without copying Microsoft or Apple artwork, marks, or UI. The web treatment is an original CSS approximation.
 
-## Audit scorecard
+## Point of view
 
-Scores are qualitative design judgments, not certification. File references refer to the reviewed source.
+Chiaro Code makes practical tools around music lessons. The site should show both sides of that work: a calmer school pickup for RideReady, and a low-equipment start for students using Typing-to-MIDI. The generated festival image carries the brand metaphor. It is illustrative artwork, not a product screen or a claim about either tool.
 
-| Dimension | Score / 10 | Example and applied correction |
-| --- | --- | --- |
-| Color consistency | 9 | Retained the shared palette at `app/globals.css:4`. Corrected dark text on the dark mission band with explicit paper text at `app/globals.css:86`. |
-| Typography hierarchy | 9 | Preserved serif display type and sans-serif body text. More readable headline leading at `app/globals.css:53`; navigation and action labels are 14px at the default size. |
-| Spacing rhythm | 8 | Retained the existing half-rem-based component spacing and fluid section spacing at `app/globals.css:38`. A shared 44px control-height token is defined at `app/globals.css:16`. |
-| Component consistency | 9 | All action links share the same underline, hover and active treatment at `app/globals.css:57`. Unavailable RideReady downloads are now plain status copy, not disabled-looking actions. |
-| Responsive behavior | 9 | Grids collapse at 850px and 560px (`app/globals.css:184`, `app/globals.css:206`). Fixed pricing status overflow with wrapping at `app/globals.css:56`; all three pages checked down to 320px. |
-| Dark mode | 8 | The existing brand is intentionally light-only, now declared at `app/globals.css:22`. Dark content bands have explicit contrast. No theme toggle or unsupported dark theme is implied. |
-| Animation | 9 | Removed layout-shifting hover padding at `app/globals.css:58`. Only color transitions and anchor scrolling remain; reduced-motion preferences are respected at `app/globals.css:223`. |
-| Accessibility | 9 | Focus indicators at `app/globals.css:34` and `app/globals.css:179`; usable target heights at lines 43, 46, 48, 57 and 178. Escape closes the mobile menu and restores focus at `components/site-header.tsx:27`. |
-| Information density | 9 | Two clear product sections with an in-page index, a factual development notice, an actual controller screenshot, and platform-specific downloads in `app/products/page.tsx`. Pricing now explains availability instead of displaying a placeholder. |
-| Polish | 9 | In-page targets clear the sticky header at `app/globals.css:27`. Mobile navigation closes on selection, Escape, outside interaction, focus departure and desktop resize in `components/site-header.tsx`. |
+Keep the real RideReady and Typing-to-MIDI images as their product identifiers. Do not invent a RideReady screenshot, customers, adoption numbers, testimonials, launch dates, or product behavior.
 
-## Verification
+## Logo and motion
 
-- 34 rendered internal link instances across all three routes resolved, including their fragment targets; no empty or placeholder destinations.
-- The setup guide, release notes, and four Typing-to-MIDI download URLs returned HTTP 200 after redirects. Asset contents were not downloaded or runtime-tested as part of this website review.
-- Mobile menu open/close, Escape focus return, and keyboard navigation to Products passed in Chrome.
-- Product anchor navigation positioned the section below the sticky header.
-- No horizontal overflow at 320, 390, 768, or 1200px on all three pages. Text enlargement to 200% checked at 390 and 1200px; the pricing overflow found during that check was corrected and retested.
-- Products passed the mobile Lighthouse snapshot audit: Accessibility, Best Practices, SEO, and Agentic Browsing all 100; 28 checks passed, none failed. A snapshot audit does not measure performance or replace manual accessibility review.
-- Products produced no browser console warnings or errors during the checked flow.
-- No RideReady download or purchase controls are rendered. Public launch requires a separate owner decision.
+- The primary mark uses a simple planning grid, five music-staff lines, and two noteheads. Its SVG form is one color and remains legible at small sizes.
+- The generated PNG is the full-color brand mark for the home-page caption and high-resolution browser icons. The SVG favicon uses the high-contrast monochrome mark.
+- The mark animates once on entry. Staff lines unfold from the grid and notes rise into place. Hovering or focusing the home link pauses it. Reduced-motion users see the complete static mark.
+- Keep motion short and tied to the planning-to-music story. Do not add autoplay audio, scroll reveals, parallax, or looping animation.
+- Frosted transparency is reserved for the sticky navigation. Use a solid surface when reduced transparency is requested. Product information stays on opaque surfaces.
 
-## Maintenance
+## Color roles
 
-Use the palette and type variables in `app/globals.css`. Keep controls at least 44px high, use semantic links for destinations, and preserve visible keyboard focus. Check product claims against their actual release documentation. Do not add unannounced prices, launch dates, market statistics, or customer claims.
+Contrast ratios use the WCAG relative-luminance formula. Text colors are measured on their stated surfaces.
+
+| Role | Light | Dark | Contrast |
+|---|---|---|---|
+| Canvas | #EFF8FF | #0D2037 | Primary text: 12.94:1 light, 15.36:1 dark |
+| Surface | #FFFFFF | #152B45 | Muted text: 4.99:1 light, 8.47:1 dark |
+| Primary text | #102D4F | #F2F8FF | 12.94:1 light, 15.36:1 dark |
+| Body text | #39546F | #DAE9F8 | 7.31:1 light, 13.29:1 dark |
+| Supporting text | #58728D | #B6C9DD | 4.99:1 light, 8.47:1 dark |
+| Link accent | #1D5FA7 | #9BCFFF | 6.02:1 light, 9.98:1 dark |
+| Primary action | #145AA8 with white | #9BCFFF with #0D2037 | 6.87:1 light, 9.98:1 dark |
+
+Festival coral and warm stage light belong in imagery only. Availability is always described in words as well as color.
+
+## Type and shape
+
+- Use the system UI family, including Segoe UI where available, with no remote font dependency.
+- Keep body text at 16px or above. H1 is fluid from about 46px on narrow layouts to about 98px on wide layouts. Buttons and navigation links are at least 48px tall.
+- Use weight and scale for hierarchy. Eyebrows are rare and name a real topic.
+- Buttons use a consistent pill shape. Panels use a single rounded rectangle family. Content surfaces remain opaque.
+
+## Layout
+
+Keep the existing route structure and reading order. The home page leads with RideReady, follows with the planning-to-festival brand story, then shows RideReady and Typing-to-MIDI as distinct pathways. Products and pricing preserve their current details and availability.
+
+    Wide home:   [RideReady message and actions] [RideReady icon and purpose]
+                 [planning-to-festival image and caption]
+                 [RideReady pathway] [Typing-to-MIDI pathway]
+
+    Narrow home: [RideReady message]
+                 [actions and pilot price]
+                 [RideReady icon and purpose]
+                 [planning-to-festival image and caption]
+                 [RideReady pathway]
+                 [Typing-to-MIDI pathway]
+
+Use the same shell across pages. Paired sections stack at compact widths. Images keep their aspect ratios and links remain independently reachable at 320px and 200% zoom.
+
+## Interaction and accessibility
+
+- The header keeps its keyboard-operable mobile menu, Escape dismissal, current-page state, and skip link.
+- Every interactive element has a visible focus ring. Navigation uses links and actions use buttons.
+- The logo transition runs only for people who have not requested reduced motion. Hover or focus pauses it.
+- Respect reduced transparency with an opaque navigation surface. Keep text contrast high without blur.
+- Test light and dark appearances, keyboard access, reduced motion, reduced transparency, contrast, image alternatives, 320px layout, and 200% browser zoom before publishing.
+
+## Product and privacy boundaries
+
+- RideReady remains in development, with a limited pilot being prepared at $99 per device license per year. It is not a released download. Stripe setup stays test-only and paused; no live checkout or payment-to-license fulfillment is enabled.
+- Typing-to-MIDI version 1.0.0 is available for macOS and Windows. It sends MIDI and needs a compatible instrument app and MIDI routing to produce sound.
+- Do not include private finance prototypes, data, modules, secrets, or credentials in public routes, imports, build output, or client bundles.
+- Do not change static hosting, workflow, or project linkage as part of this visual iteration.

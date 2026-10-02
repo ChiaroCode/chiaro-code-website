@@ -10,7 +10,13 @@ export const metadata: Metadata = {
     template: '%s | Chiaro Code',
   },
   description: 'Fewer barriers. More music. Chiaro Code builds practical tools for schools and students: RideReady for pickup logistics and Typing-to-MIDI for accessible music creation.',
-  icons: { icon: sitePath('/favicon.svg') },
+  icons: {
+    icon: [
+      { url: sitePath('/favicon.svg'), type: 'image/svg+xml' },
+      { url: sitePath('/images/chiaro-code-mark.png'), type: 'image/png', sizes: '1254x1254' },
+    ],
+    apple: sitePath('/images/chiaro-code-mark.png'),
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
