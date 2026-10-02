@@ -7,38 +7,40 @@ export const dynamic = 'force-static';
 export default function HomePage() {
   return (
     <>
-      <section className="home-hero ride-ready-hero shell" aria-labelledby="home-title">
-        <div className="hero-copy">
-          <p className="eyebrow">RideReady · in development</p>
-          <h1 id="home-title">A clearer pickup line.</h1>
-          <p className="hero-lede">
-            RideReady is being developed to help staff call numbers and keep them visible on a shared display.
-          </p>
-          <div className="hero-actions">
-            <a className="button-link" href={sitePath('/products#ride-ready')}>Explore RideReady</a>
-            <a className="text-link" href={sitePath('/pricing#ride-ready-status')}>Pilot pricing &amp; availability</a>
+      <div className="ride-ready-hero-band">
+        <section className="home-hero shell" aria-labelledby="home-title">
+          <div className="hero-copy">
+            <p className="eyebrow">RideReady · in development</p>
+            <h1 id="home-title">A clearer pickup line.</h1>
+            <p className="hero-lede">
+              RideReady is being developed to help staff call numbers and keep them visible on a shared display.
+            </p>
+            <div className="hero-actions">
+              <a className="button-link" href={sitePath('/products#ride-ready')}>Explore RideReady</a>
+              <a className="text-link" href={sitePath('/pricing#ride-ready-status')}>Pilot pricing &amp; availability</a>
+            </div>
+            <p className="hero-pilot-note">Limited pilot being prepared <span aria-hidden="true">·</span> $99 per device license / year</p>
           </div>
-          <p className="hero-pilot-note">Limited pilot being prepared <span aria-hidden="true">·</span> $99 per device license / year</p>
-        </div>
 
-        <div className="ride-ready-visual" aria-label="RideReady, a school pickup tool in development">
-          <div className="ride-ready-emblem">
-            <Image
-              src={sitePath('/images/ride-ready-icon.jpg')}
-              alt="RideReady app icon showing a blue car with the numbers four, five, and six"
-              width={1080}
-              height={1080}
-              priority
-            />
+          <div className="ride-ready-visual" aria-label="RideReady, a school pickup tool in development">
+            <div className="ride-ready-emblem">
+              <Image
+                src={sitePath('/images/ride-ready-icon.jpg')}
+                alt="RideReady app icon showing a blue car with the numbers four, five, and six"
+                width={1080}
+                height={1080}
+                priority
+              />
+            </div>
+            <div className="ride-ready-visual-copy">
+              <p className="ride-ready-visual-label">A tool for school pickup</p>
+              <p className="ride-ready-visual-title">Call a number.<br />Keep it in view.</p>
+              <p className="ride-ready-visual-detail">Staff call numbers. A shared display keeps them visible.</p>
+              <span className="pathway-status status-development">In development</span>
+            </div>
           </div>
-          <div className="ride-ready-visual-copy">
-            <p className="ride-ready-visual-label">A tool for school pickup</p>
-            <p className="ride-ready-visual-title">Call a number.<br />Keep it in view.</p>
-            <p className="ride-ready-visual-detail">Staff call numbers. A shared display keeps them visible.</p>
-            <span className="pathway-status status-development">In development</span>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="section home-access" id="about" aria-labelledby="access-title">
         <div className="shell">
