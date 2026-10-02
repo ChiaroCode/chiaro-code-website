@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CursorHalo } from '@/components/cursor-halo';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { sitePath } from '@/lib/base-path';
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         <main id="main-content" tabIndex={-1}>{children}</main>
         <SiteFooter />
+        <CursorHalo />
       </body>
     </html>
   );

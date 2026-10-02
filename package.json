@@ -12,6 +12,7 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt",
+    "test:cursor": "node --test test/cursor-halo.test.mjs",
     "test:stripe-links": "node --test test/stripe-test-links.test.mjs"
   },
   "dependencies": {

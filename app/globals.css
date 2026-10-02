@@ -54,7 +54,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 [id] { scroll-margin-top: 6rem; }
 body {
   margin: 0;
@@ -107,13 +107,13 @@ h1, h2, h3 {
   font-family: var(--font-ui);
   font-optical-sizing: auto;
   font-weight: 680;
-  letter-spacing: -.05em;
-  line-height: 1.04;
+  letter-spacing: -.025em;
+  line-height: 1.14;
   text-wrap: balance;
   overflow-wrap: anywhere;
 }
-h1 { font-size: clamp(3.25rem, 6.3vw, 6.15rem); }
-h2 { margin-bottom: 0; font-size: clamp(2.45rem, 4.5vw, 4.15rem); }
+h1 { letter-spacing: -.045em; line-height: 1.06; font-size: clamp(3.25rem, 6.3vw, 6.15rem); }
+h2 { letter-spacing: -.035em; line-height: 1.1; margin-bottom: 0; font-size: clamp(2.45rem, 4.5vw, 4.15rem); }
 h3 { margin-bottom: 0; font-size: clamp(1.4rem, 2.3vw, 1.95rem); }
 p { color: var(--muted); overflow-wrap: anywhere; }
 .text-link, .button-link {
@@ -140,7 +140,9 @@ p { color: var(--muted); overflow-wrap: anywhere; }
   background: var(--action);
   box-shadow: 0 .35rem .9rem rgba(20, 90, 168, .17);
   color: var(--action-ink);
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 .text-link:hover { color: var(--accent); transform: translateY(-1px); }
 .button-link:hover {
@@ -256,7 +258,7 @@ p { color: var(--muted); overflow-wrap: anywhere; }
 .ride-ready-emblem img { width: 100%; height: 100%; object-fit: contain; }
 .ride-ready-visual-copy { min-width: 0; }
 .ride-ready-visual-label { margin: 0 0 .7rem; color: var(--accent-strong); font-size: .8125rem; font-weight: 720; letter-spacing: .07em; text-transform: uppercase; }
-.ride-ready-visual-title { margin: 0; color: var(--ink); font-size: clamp(1.55rem, 2.5vw, 2.35rem); font-weight: 680; letter-spacing: -.055em; line-height: 1.08; text-wrap: balance; }
+.ride-ready-visual-title { margin: 0; color: var(--ink); font-size: clamp(1.55rem, 2.5vw, 2.35rem); font-weight: 680; letter-spacing: -.03em; line-height: 1.16; text-wrap: balance; }
 .ride-ready-visual-detail { max-width: 18rem; margin: .8rem 0 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
 .ride-ready-visual-copy .pathway-status { margin-top: 1rem; }
 
@@ -393,7 +395,7 @@ p { color: var(--muted); overflow-wrap: anywhere; }
 }
 .feature-item { min-height: 9rem; padding: 1.45rem 0; border-bottom: 1px solid var(--rule); }
 .feature-item:nth-child(odd) { padding-right: 2rem; border-right: 1px solid var(--rule); }
-.feature-item h3 { margin-bottom: .7rem; font-size: 1.25rem; letter-spacing: -.035em; }
+.feature-item h3 { margin-bottom: .7rem; font-size: 1.25rem; letter-spacing: -.015em; line-height: 1.3; }
 .feature-item p { margin: 0; font-size: 1rem; }
 .product-content, .midi-intro > *, .midi-setup > *, .pricing-panel > * { min-width: 0; }
 .availability-note {
@@ -435,7 +437,7 @@ p { color: var(--muted); overflow-wrap: anywhere; }
   border-radius: 1.15rem;
   background: var(--surface);
 }
-.download-card strong { color: var(--ink); font-size: 1.35rem; font-weight: 680; letter-spacing: -.035em; }
+.download-card strong { color: var(--ink); font-size: 1.35rem; font-weight: 680; letter-spacing: -.02em; line-height: 1.3; }
 .download-card span { margin-top: .2rem; color: var(--muted); font-size: .9rem; }
 .download-card .button-link { margin-top: auto; }
 .closing-section { background: var(--surface-soft); }
@@ -453,11 +455,11 @@ p { color: var(--muted); overflow-wrap: anywhere; }
   border-top: 1px solid var(--rule-strong);
 }
 .pricing-audience { margin: 0; color: var(--accent-strong); font-size: 1rem; font-weight: 700; }
-.pricing-status { margin: .8rem 0 0; color: var(--accent-strong); font-size: clamp(1.9rem, 3.6vw, 3.2rem); font-weight: 650; letter-spacing: -.05em; line-height: 1.1; }
+.pricing-status { margin: .8rem 0 0; color: var(--accent-strong); font-size: clamp(1.9rem, 3.6vw, 3.2rem); font-weight: 650; letter-spacing: -.03em; line-height: 1.15; }
 .pricing-copy h2 { margin-bottom: 1.3rem; font-size: clamp(2.4rem, 4.3vw, 4rem); }
 .pricing-copy > p { max-width: 43rem; font-size: 1.05rem; }
 /* Keep Stripe test-only status and controls legible and explicit. */
-.pricing-copy .ride-ready-price { margin: 0 0 1.25rem; color: var(--ink); font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 680; letter-spacing: -.05em; line-height: 1.15; }
+.pricing-copy .ride-ready-price { margin: 0 0 1.25rem; color: var(--ink); font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 680; letter-spacing: -.03em; line-height: 1.2; font-variant-numeric: lining-nums; }
 .ride-ready-price span { color: var(--muted); font-size: .9rem; font-weight: 500; letter-spacing: 0; }
 .pricing-checkout {
   display: flex;
@@ -647,4 +649,40 @@ p { color: var(--muted); overflow-wrap: anywhere; }
     transition-duration: .01ms !important;
     animation: none !important;
   }
+}
+
+/* A small glass halo follows a mouse; never replaces or captures the cursor. */
+.cursor-halo { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .cursor-halo {
+    display: block;
+    position: fixed;
+    inset: 0;
+    overflow: clip;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease;
+  }
+  .cursor-halo[data-visible='true'] { opacity: 1; }
+  .cursor-halo span { position: absolute; top: 0; left: 0; }
+  .cursor-halo span::before {
+    content: '';
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: -.875rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent-wash) 14%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--surface) 65%, transparent);
+    transition: transform 180ms var(--ease-spatial), border-color 180ms ease;
+  }
+  .cursor-halo[data-interactive='true'] span::before {
+    transform: scale(1.22);
+    border-color: color-mix(in srgb, var(--accent) 48%, transparent);
+  }
+}
+@media (forced-colors: active), (prefers-reduced-transparency: reduce) {
+  .cursor-halo { display: none; }
 }

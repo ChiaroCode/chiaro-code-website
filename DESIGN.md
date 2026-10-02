@@ -43,6 +43,7 @@ Festival coral and warm stage light belong in imagery only. Availability is alwa
 - Use the system UI family, including Segoe UI where available, with no remote font dependency.
 - Keep body text at 16px or above. H1 is fluid from about 46px on narrow layouts to about 98px on wide layouts. Buttons and navigation links are at least 48px tall.
 - Use weight and scale for hierarchy. Eyebrows are rare and name a real topic.
+- Keep native kerning enabled. Tracking is optical by size: H1 −.045em, H2 −.035em, H3 −.025em; small feature headings relax to −.015em. Smaller headings use more leading rather than the display heading’s tight spacing. Preserve the established wordmark.
 - Buttons use a consistent pill shape. Panels use a single rounded rectangle family. Content surfaces remain opaque.
 
 ## Layout
@@ -67,6 +68,7 @@ Use the same shell across pages. Paired sections stack at compact widths. Images
 - The header keeps its keyboard-operable mobile menu, Escape dismissal, current-page state, and skip link.
 - Every interactive element has a visible focus ring. Navigation uses links and actions use buttons.
 - The logo transition runs only for people who have not requested reduced motion. Hover or focus pauses it.
+- A small decorative glass halo may follow a fine mouse pointer. Keep the native cursor, never intercept input, and never update React state on pointer movement. It is hidden until an eligible mouse moves; disable it for reduced motion, touch/no-hover, forced colors and reduced transparency. Hide it while selecting, scrolling or using the keyboard. Stop its animation frame loop at rest and clean up listeners on preference changes and unmount.
 - Respect reduced transparency with an opaque navigation surface. Keep text contrast high without blur.
 - Test light and dark appearances, keyboard access, reduced motion, reduced transparency, contrast, image alternatives, 320px layout, and 200% browser zoom before publishing.
 
