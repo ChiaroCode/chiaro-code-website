@@ -10,7 +10,7 @@ import styles from '@/app/home.module.css';
 const stories = [
   {
     key: 'rideready',
-    label: 'School pickup',
+    label: 'Pickup coordination',
     title: 'One number. One shared picture.',
     copy: 'RideReady is being developed for staff calling numbers in a busy pickup line. Explore the pairing, zone confirmation, shared display, and announcement flow with a fictional number.',
     status: 'Pilot in development · 2.4.0 additions are not released',

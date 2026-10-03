@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowUpRight, Keyboard, Monitor } from 'lucide-react';
 import { MarketingMotion } from '@/components/marketing-motion';
+import { MusicMaterial } from '@/components/music-material';
+import { TactileSurface, MagneticLink } from '@/components/tactile-surface';
 import { ProductStoryChooser } from '@/components/product-story-chooser';
 import { sitePath } from '@/lib/base-path';
 import {
@@ -61,19 +63,22 @@ export default function HomePage() {
         >
           <div className={styles.heroCopy}>
             <p>Practical tools. More room for music.</p>
-            <h1 id="home-title" data-motion-enter>
-              A clearer
-              <br />
-              pickup line.
+            <h1 id="home-title" className={styles.revealMask}>
+              <span data-mask-reveal>
+                A clearer
+                <br />
+                pickup line.
+              </span>
             </h1>
             <p className={styles.lede}>
-              RideReady is being developed to help staff call numbers and keep
-              them visible on a shared display.
+              RideReady is in development to help staff call numbers and keep a
+              shared display clear.
             </p>
             <div className={styles.heroActions}>
-              <a className="button-link" href={sitePath('/RideReady')}>
-                Explore RideReady <ArrowUpRight size={18} aria-hidden="true" />
-              </a>
+              <MagneticLink href={sitePath('/RideReady')}>
+                Explore RideReady{' '}
+                <ArrowUpRight size={18} strokeWidth={1.5} aria-hidden="true" />
+              </MagneticLink>
               <a
                 className="text-link"
                 href={sitePath('/pricing#ride-ready-status')}
@@ -81,19 +86,17 @@ export default function HomePage() {
                 Pilot pricing &amp; availability
               </a>
             </div>
-            <p className={styles.heroNote}>
-              For schools &amp; after-school programs. Limited pilot in
-              development.
-            </p>
           </div>
           <figure className={styles.heroVisual} data-motion-enter>
-            <Image
-              src={sitePath('/images/ride-ready-icon.jpg')}
-              alt="RideReady app icon showing a blue car with the numbers four, five, and six"
-              width={1080}
-              height={1080}
-              priority
-            />
+            <TactileSurface>
+              <Image
+                src={sitePath('/images/ride-ready-icon.jpg')}
+                alt="RideReady app icon showing a blue car with the numbers four, five, and six"
+                width={1080}
+                height={1080}
+                priority
+              />
+            </TactileSurface>
             <figcaption>Call a number. Keep it in view.</figcaption>
           </figure>
         </section>
@@ -111,6 +114,7 @@ export default function HomePage() {
         </div>
         <ProductStoryChooser />
       </section>
+      <MusicMaterial />
       <section
         className={styles.storyBand}
         id="about"
@@ -150,6 +154,7 @@ export default function HomePage() {
             </p>
             <figure className={styles.festival}>
               <Image
+                data-image-reveal
                 src={sitePath('/images/chiaro-festival-story.png')}
                 alt="A planning grid flows into music staff lines above an outdoor festival stage"
                 width={1672}

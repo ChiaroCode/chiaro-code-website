@@ -9,6 +9,7 @@ import {
   Volume2,
 } from 'lucide-react';
 import { RideReadyDemo } from '@/components/ride-ready-demo';
+import { TactileSurface } from '@/components/tactile-surface';
 import { MarketingMotion } from '@/components/marketing-motion';
 import { RideReadyPricing } from '@/components/ride-ready-pricing';
 import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
@@ -89,38 +90,40 @@ export default function RideReadyPage() {
             Download &amp; availability
           </a>
         </div>
-        <div
-          className={styles.heroBoard}
-          aria-label="Illustration of a shared pickup board with fictional numbers"
-        >
-          <div className={styles.boardTop}>
-            <span>
-              <span className={styles.dot} /> Shared pickup board
-            </span>
-            <span>Illustration</span>
-          </div>
-          <div className={styles.heroNumbers} aria-hidden="true">
-            <div>
-              <span>Zone A</span>
-              <strong>247</strong>
-              <span>Called</span>
+        <TactileSurface className={styles.boardSurface}>
+          <div
+            className={styles.heroBoard}
+            aria-label="Illustration of a shared pickup board with fictional numbers"
+          >
+            <div className={styles.boardTop}>
+              <span>
+                <span className={styles.dot} /> Shared pickup board
+              </span>
+              <span>Illustration</span>
             </div>
-            <div>
-              <span>Zone B</span>
-              <strong>408</strong>
-              <span>Called</span>
+            <div className={styles.heroNumbers} aria-hidden="true">
+              <div>
+                <span>Zone A</span>
+                <strong>247</strong>
+                <span>Called</span>
+              </div>
+              <div>
+                <span>Zone B</span>
+                <strong>408</strong>
+                <span>Called</span>
+              </div>
+              <div>
+                <span>Zone A</span>
+                <strong>156</strong>
+                <span>Called</span>
+              </div>
             </div>
-            <div>
-              <span>Zone A</span>
-              <strong>156</strong>
-              <span>Called</span>
+            <div className={styles.boardBottom}>
+              <span>Easy to call. Easy to see.</span>
+              <span>Fictional example numbers</span>
             </div>
           </div>
-          <div className={styles.boardBottom}>
-            <span>Easy to call. Easy to see.</span>
-            <span>Fictional example numbers</span>
-          </div>
-        </div>
+        </TactileSurface>
       </section>
 
       <section

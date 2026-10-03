@@ -8,7 +8,7 @@ import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 export const metadata: Metadata = {
   title: 'Pricing & Availability',
   description:
-    'RideReady pilot pricing is under review. Contact for pilot availability. Typing-to-MIDI 1.0.0 is available to download.',
+    'RideReady is $199 USD per location per year, with founding pilot first-year options. Checkout unavailable. Typing-to-MIDI 1.0.0 is available.',
 };
 export const dynamic = 'force-static';
 
@@ -28,16 +28,16 @@ export default function PricingPage() {
         aria-labelledby="ride-ready-status-title"
       >
         <div>
-          <p className="pricing-audience">For schools</p>
-          <p className="pricing-status">Pricing under review</p>
+          <p className="pricing-audience">For a school, campus or site</p>
+          <p className="pricing-status">Annual location plan</p>
         </div>
         <div className="pricing-copy">
           <h2 id="ride-ready-status-title">RideReady</h2>
           <RideReadyPricing />
           <p>{rideReadyBillingNote}</p>
           <p>
-            Plan details and pricing are being researched before purchase
-            becomes available.
+            Founding pilot options are for the first year. The annual renewal is
+            $199 per location for every option.
           </p>
           <div
             className="pricing-checkout"

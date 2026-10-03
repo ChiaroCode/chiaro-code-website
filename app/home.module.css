@@ -24,9 +24,9 @@
 .heroBand {
   background: radial-gradient(
     ellipse at 84% 52%,
-    #244f77 0%,
-    #163756 35%,
-    #102d4f 75%
+    #233a48 0%,
+    #171e2c 35%,
+    #0d111a 75%
   );
   color: #fff;
   --ink: #fff;
@@ -42,7 +42,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
   gap: 2rem;
-  padding-block: clamp(4.5rem, 7.5vw, 7.5rem) clamp(5rem, 9vw, 9rem);
+  padding-block: clamp(4rem, 6vw, 6rem) clamp(5rem, 9vw, 9rem);
   align-items: center;
 }
 .heroCopy {
@@ -84,14 +84,14 @@
 .heroVisual {
   position: relative;
   z-index: 1;
-  margin: 3.5rem 0 0 -2.5rem;
+  margin: 2rem 0 0;
 }
 .heroVisual img {
   width: 100%;
   height: auto;
   border-radius: 2rem;
   box-shadow: 0 2.5rem 5rem #00122666;
-  transform: rotate(4deg);
+  transform: none;
 }
 .heroVisual figcaption {
   padding-top: 1.7rem;
@@ -239,7 +239,7 @@
   gap: clamp(3rem, 7vw, 7rem);
 }
 .storyBand {
-  background: #102d4f;
+  background: #101620;
   color: #fff;
   padding-block: clamp(5rem, 10vw, 10rem);
 }
@@ -391,7 +391,7 @@
     justify-self: end;
   }
   .heroVisual img {
-    transform: rotate(2deg);
+    transform: none;
   }
   .storyGrid {
     grid-template-columns: 1fr;
@@ -493,7 +493,7 @@
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .heroVisual:hover img {
-    transform: rotate(2deg) scale(1.025);
+    transform: scale(1.015);
   }
   .storyArtwork:hover img,
   .festival:hover img {
@@ -502,4 +502,11 @@
   .inlineImage:hover img {
     transform: scale(1.1);
   }
+}
+
+.revealMask {
+  overflow: clip;
+}
+.revealMask > span {
+  display: block;
 }

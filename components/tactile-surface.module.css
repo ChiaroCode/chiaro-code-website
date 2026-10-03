@@ -1,0 +1,50 @@
+.host {
+  position: relative;
+  min-width: 0;
+  isolation: isolate;
+}
+.visual {
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: inherit;
+}
+.glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  clip-path: inset(0 round 2rem);
+  opacity: 0;
+  background: radial-gradient(ellipse at 40% 20%, #ffffff80, transparent 62%);
+}
+.magnetic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 7px;
+  margin: -7px;
+  text-decoration: none;
+  border-radius: 999px;
+}
+.magnetic > span {
+  gap: 0.65rem;
+  pointer-events: none;
+}
+.magnetic:focus-visible > span {
+  transform: none !important;
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .visual,
+  .magnetic > span {
+    transform: none !important;
+  }
+  .glare {
+    display: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  .glare {
+    display: none;
+  }
+}

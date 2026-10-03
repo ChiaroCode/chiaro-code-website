@@ -1,86 +1,52 @@
-# Chiaro Code website design system
+# Chiaro Code tactile design system
 
-## Design read
+Design read: a practical education and music site with the existing blue identity, clear product status, and one tactile musical gesture that invites exploration.
 
-Reading this as a three-page marketing site for schools, music teachers, and students, with a bright sky-glass language and one stage-like story: a planning grid resolves into music at a festival.
+Dials: design variance 7, motion intensity 5, visual density 3. This is an evolution of the current site, preserving all four routes, original company logo, product icons, download anchors, custom domain, hosting and public audience. It is an original web material treatment inspired by depth and clarity; it is not Apple's native Liquid Glass implementation.
 
-This is an identity refresh over the reconciled site. Keep /, /products, and /pricing, the existing navigation labels and anchor IDs, and all factual product and pricing copy. RideReady remains the lead product. Typing-to-MIDI stays the available student tool.
+## Roles and signature
 
-The dials are DESIGN_VARIANCE: 7, MOTION_INTENSITY: 4, and VISUAL_DENSITY: 3. The visual signature is a spreadsheet grid opening into music staff lines, with festival light at the end of that path. The sky and glass cues borrow a feeling from early Aero-era interfaces without copying Microsoft or Apple artwork, marks, or UI. The web treatment is an original CSS approximation.
+Obsidian is the dark canvas, slate is the elevated content material, and light mode uses cool neutral surfaces. Cyan indicates actions, violet belongs to the illustrative notes, and amber identifies the selected note. Meaning also appears in text and native pressed state. Only the compact floating navigation uses a 28px backdrop blur. Content panels use opaque fills, double specular edges, and a static shadow. A fixed radial wash suggests stage light without a perpetual loop or animated filter.
 
-## Point of view
+The signature is the music surface: a quiet backplate, a readable panel, and notes/keys on two shallow depth planes. Pointer tilt is bounded at 5 degrees and 1.04 scale with a 1000px perspective. The panel never conveys real product capabilities: it explicitly says Silent illustration and does not connect to MIDI or make sound.
 
-Chiaro Code makes practical tools around music lessons. The site should show both sides of that work: a calmer school pickup for RideReady, and a low-equipment start for students using Typing-to-MIDI. The generated festival image carries the brand metaphor. It is illustrative artwork, not a product screen or a claim about either tool.
+## Tokens and hierarchy
 
-Keep the real RideReady and Typing-to-MIDI images as their product identifiers. Do not invent a RideReady screenshot, customers, adoption numbers, testimonials, launch dates, or product behavior.
+`design-tokens.json` is the portable specification. `app/globals.css` holds production semantic variables. Geist is self-hosted with swap; Lucide is the existing thin icon system. Controls keep 48px preferred hit height, visible focus, normal reading order, and a stationary hit region. Major materials use 32px radius, compact surfaces 24px, buttons one pill family. Main sections have 80–176px breathing room; compact layouts reduce this without squeezing controls.
 
-## Logo and motion
+The original company image is unchanged, including its original transparency and pixels. Root OG/Twitter metadata uses its absolute HTTPS URL. RideReady retains the car image and its independent metadata. Social platforms may retain older previews in their own caches.
 
-- The primary mark uses a simple planning grid, five music-staff lines, and two noteheads. Its SVG form is one color and remains legible at small sizes.
-- The generated PNG is the full-color brand mark for the home-page caption and high-resolution browser icons. The SVG favicon uses the high-contrast monochrome mark.
-- The mark animates once on entry. Staff lines unfold from the grid and notes rise into place. Hovering or focusing the home link pauses it. Reduced-motion users see the complete static mark.
-- Keep motion short and tied to the planning-to-music story. Do not add autoplay audio, scroll reveals, parallax, or looping animation.
-- Frosted transparency is reserved for the sticky navigation. Use a solid surface when reduced transparency is requested. Product information stays on opaque surfaces.
+## Layout plan
 
-## Color roles
+```
+Wide:   [floating brand + navigation]
+        [two-line RideReady heading/actions] [real car icon, shallow tilt]
+        [three manual product-story choices / expanded content]
+        [music explanation] [layered silent instrument]
+        [pinned mission title] [readable text + actual artwork + facts]
+        [available product / truthful RideReady release action]
+Narrow: each pair becomes one column; layers flatten; controls remain reachable.
+```
 
-Contrast ratios use the WCAG relative-luminance formula. Text colors are measured on their stated surfaces.
+Seed 1032026 selects editorial split, inline typography imagery, accordion slices and a notation strip, with image reveals/depth stacking. Existing Geist overrides the randomized Cabinet choice to preserve the brand. The chosen partner-marquee architecture is translated to stationary notation rather than fictional partners or continuous animation. The existing controlled story chooser and typography image remain; no fake testimonials are added. Three choices fill three columns with no vacant grid cells. The hero remains two desktop lines without decorative badges or statistics.
 
-| Role | Light | Dark | Contrast |
-|---|---|---|---|
-| Canvas | #EFF8FF | #0D2037 | Primary text: 12.94:1 light, 15.36:1 dark |
-| Surface | #FFFFFF | #152B45 | Muted text: 4.99:1 light, 8.47:1 dark |
-| Primary text | #102D4F | #F2F8FF | 12.94:1 light, 15.36:1 dark |
-| Body text | #39546F | #DAE9F8 | 7.31:1 light, 13.29:1 dark |
-| Supporting text | #58728D | #B6C9DD | 4.99:1 light, 8.47:1 dark |
-| Link accent | #1D5FA7 | #9BCFFF | 6.02:1 light, 9.98:1 dark |
-| Primary action | #145AA8 with white | #9BCFFF with #0D2037 | 6.87:1 light, 9.98:1 dark |
+## Motion and access
 
-Festival coral and warm stage light belong in imagery only. Availability is always described in words as well as color.
+One shared event-driven pointer driver handles cursor ring/dot, tilt and magnetic links. GSAP owns contextual scroll and reveal motion. See `docs/motion-architecture.md` for physical tokens, rendering costs, cleanup and instrumentation. No React state changes continuously with pointer movement; note selection and slider changes are discrete functional interactions. The slider is a native range input, supporting touch drag and keyboard arrows. All notes are native pressed buttons.
 
-## Type and shape
+Reduced motion removes the cursor, tilt, magnet, pin, scrub, depth and entry movement. Content remains visible. Reduced transparency removes the navigation blur; increased contrast strengthens the material boundary and uses opaque navigation. Forced colors retain native controls and selected borders. Motion stops at rest and resets when hidden, offscreen, scrolling, dragging or using the keyboard.
 
-- Use the system UI family, including Segoe UI where available, with no remote font dependency.
-- Keep body text at 16px or above. H1 is fluid from about 46px on narrow layouts to about 98px on wide layouts. Buttons and navigation links are at least 48px tall.
-- Use weight and scale for hierarchy. Eyebrows are rare and name a real topic.
-- Keep native kerning enabled. Tracking is optical by size: H1 −.045em, H2 −.035em, H3 −.025em; small feature headings relax to −.015em. Smaller headings use more leading rather than the display heading’s tight spacing. Preserve the established wordmark.
-- Buttons use a consistent pill shape. Panels use a single rounded rectangle family. Content surfaces remain opaque.
+## References and interpretation
 
-## Layout
+- [Apple Logic Pro](https://www.apple.com/logic-pro/): clear typography and authentic product imagery suggest the editorial hierarchy.
+- [Ableton Live](https://www.ableton.com/en/live/): restrained surfaces frame musical content; we do not copy its product interface.
+- [MuseScore](https://musescore.org/en): approachable notation motivates a simple, understandable music interaction.
+- [Apple materials](https://developer.apple.com/design/human-interface-guidelines/materials), [motion](https://developer.apple.com/design/human-interface-guidelines/motion), [accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility): hierarchy, brief optional feedback, keyboard/gesture alternatives and legibility guide the web translation.
 
-Keep the existing route structure and reading order. The home page leads with RideReady, follows with the planning-to-festival brand story, then shows RideReady and Typing-to-MIDI as distinct pathways. Products and pricing preserve their current details and availability.
+The requested ECC taste file concerns angelcore/cloud-trance music-video visuals. Only its coherent dark base, crystalline cool colors and sparse warm accent inform this web task. Its music/video generation pipeline and invented tempo/key are inapplicable. Apple HIG native conventions are translated to web semantics, not copied as app chrome. User instructions and current release facts override any skill's animation or stock-image suggestions.
 
-    Wide home:   [RideReady message and actions] [RideReady icon and purpose]
-                 [planning-to-festival image and caption]
-                 [RideReady pathway] [Typing-to-MIDI pathway]
+## Product and publication boundaries
 
-    Narrow home: [RideReady message]
-                 [actions and pilot price]
-                 [RideReady icon and purpose]
-                 [planning-to-festival image and caption]
-                 [RideReady pathway]
-                 [Typing-to-MIDI pathway]
+The approved public plan is $199 USD per location per 12 months, main plus spare host. Phones and displays do not count as hosts. Founding first-year pilot options are $99 self setup or $149 with one guided setup session. All renew automatically at $199/year unless canceled; paid-term access remains. Email support is bounded, multi-location arrangements separate. No unlimited support, SLA, identity verification, guardian authorization, compliance, SIS or enterprise promises are added.
 
-Use the same shell across pages. Paired sections stack at compact widths. Images keep their aspect ratios and links remain independently reachable at 320px and 200% zoom.
-
-## Interaction and accessibility
-
-- The header keeps its keyboard-operable mobile menu, Escape dismissal, current-page state, and skip link.
-- Every interactive element has a visible focus ring. Navigation uses links and actions use buttons.
-- The logo transition runs only for people who have not requested reduced motion. Hover or focus pauses it.
-- A small decorative glass halo may follow a fine mouse pointer. Keep the native cursor, never intercept input, and never update React state on pointer movement. It is hidden until an eligible mouse moves; disable it for reduced motion, touch/no-hover, forced colors and reduced transparency. Hide it while selecting, scrolling or using the keyboard. Stop its animation frame loop at rest and clean up listeners on preference changes and unmount.
-- Respect reduced transparency with an opaque navigation surface. Keep text contrast high without blur.
-- Test light and dark appearances, keyboard access, reduced motion, reduced transparency, contrast, image alternatives, 320px layout, and 200% browser zoom before publishing.
-
-## Product and privacy boundaries
-
-### RideReady route addition (October 3, 2026)
-
-The owner requested `/RideReady` with fluid animations and an interactive explanation. Preserve the sky/glass palette, system typography, existing routes, and host. The route uses an explicitly labeled illustration with fictional numbers, not a product screenshot. Its motion is limited to short transform/opacity transitions on entry and user-controlled step changes. No looping motion, autoplay audio, video, or phone connection is started. The optional browser speech example starts only from its labeled button and stops when navigating steps or leaving the route. Respect reduced motion, keyboard, touch, dark appearance, and 200% zoom.
-
-The release owner verified stable 2.2.1 and zoning prerelease 2.3.0. Per-boot online pairing, session revocation, optional MP3 chimes, and the update checker are labeled as planned for unreleased 2.4.0. Keep purchase controls pending until live Stripe settings, billing terms, and fulfillment are verified. Public installer links require verified anonymous access.
-
-- RideReady remains in development. Public pricing is under review while market research is completed. No numerical plan offers, live checkout, public RideReady installers, or automated payment-to-license fulfillment are enabled.
-- Typing-to-MIDI version 1.0.0 is available for macOS and Windows. It sends MIDI and needs a compatible instrument app and MIDI routing to produce sound.
-- Do not include private finance prototypes, data, modules, secrets, or credentials in public routes, imports, build output, or client bundles.
-- Do not change static hosting, workflow, or project linkage as part of this visual iteration.
+Checkout remains disabled pending security, architecture and verified live account/fulfillment settings. Stable release metadata stays 2.2.1; 2.3.0 remains prerelease and 2.4.0 additions unreleased. No installer or live payment links are enabled. The public host is the existing GitHub Pages repo/domain. The older unbound Site is not this publication target.

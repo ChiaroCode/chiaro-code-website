@@ -16,3 +16,38 @@
   margin: 0;
   color: var(--ink-soft);
 }
+.review .price {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.price span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-top: 0.5rem;
+}
+.review p {
+  color: var(--ink-soft);
+}
+.pilots {
+  padding-block: 1.25rem;
+  margin-block: 1.25rem;
+  border-block: 1px solid var(--rule-strong);
+}
+.pilots h3 {
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+.pilots p {
+  margin: 0.65rem 0 0;
+}
+.review .renewal {
+  color: var(--ink);
+  font-weight: 600;
+}

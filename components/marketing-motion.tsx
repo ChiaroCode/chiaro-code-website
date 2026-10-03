@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import gsap from 'gsap';
+import { motionSprings, springEase } from '@/lib/tactile-runtime';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
@@ -20,11 +21,65 @@ export function MarketingMotion({
       const media = gsap.matchMedia();
       media.add('(prefers-reduced-motion: no-preference)', () => {
         gsap.fromTo(
+          '[data-mask-reveal]',
+          { yPercent: 110 },
+          {
+            yPercent: 0,
+            duration: 0.9,
+            ease: springEase(motionSprings.reveal),
+          },
+        );
+        gsap.fromTo(
           '[data-motion-enter]',
           { y: 18 },
           { y: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out' },
         );
       });
+      media.add('(prefers-reduced-motion: no-preference)', () => {
+        scope.current
+          ?.querySelectorAll<HTMLElement>('[data-image-reveal]')
+          .forEach((image) => {
+            gsap.fromTo(
+              image,
+              { scale: 0.96, opacity: 0.75 },
+              {
+                scale: 1,
+                opacity: 1,
+                ease: 'none',
+                scrollTrigger: {
+                  trigger: image,
+                  start: 'top 95%',
+                  end: 'top 50%',
+                  scrub: 0.25,
+                },
+              },
+            );
+          });
+      });
+      media.add(
+        '(min-width: 1001px) and (prefers-reduced-motion: no-preference)',
+        () => {
+          scope.current
+            ?.querySelectorAll<HTMLElement>('[data-depth-stack]')
+            .forEach((stage) => {
+              gsap.fromTo(
+                stage.querySelectorAll('[data-stack-layer]'),
+                { y: 22, rotation: 0 },
+                {
+                  y: 0,
+                  rotation: -3,
+                  ease: 'none',
+                  scrollTrigger: {
+                    trigger: stage,
+                    start: 'top 90%',
+                    end: 'top 45%',
+                    scrub: 0.3,
+                  },
+                },
+              );
+            });
+        },
+      );
       media.add(
         '(min-width: 1100px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)',
         () => {

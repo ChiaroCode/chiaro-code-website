@@ -32,7 +32,7 @@
   margin-top: 1.5rem;
   padding: clamp(2rem, 5vw, 4.5rem);
   border-radius: 2rem;
-  background: radial-gradient(ellipse at 100% 5%, #1b456e 0, #102d4f 65%);
+  background: radial-gradient(ellipse at 100% 5%, #233a48 0, #101620 65%);
   color: #fff;
   text-align: left;
 }
@@ -951,5 +951,18 @@
   .calledCard,
   .heroNumbers > div:first-child {
     border: 2px solid Highlight;
+  }
+}
+
+.boardSurface {
+  grid-column: 2;
+  grid-row: 3 / span 2;
+  align-self: center;
+  border-radius: 1.5rem;
+}
+@media (max-width: 1000px) {
+  .boardSurface {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
 }

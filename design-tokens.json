@@ -1,0 +1,17 @@
+{
+  "name": "Chiaro tactile materials",
+  "version": "1.0.0",
+  "color": {
+    "light": {"canvas":"#f2f5fa","surface":"#ffffff","surfaceSoft":"#e8edf5","text":"#102d4f","body":"#39546f","muted":"#405b75","accent":"#1d5fa7","action":"#145aa8","actionText":"#ffffff","rule":"#c5d0de","ruleStrong":"#829db6","musicViolet":"#8064d7","selectionAmber":"#efb96b"},
+    "dark": {"canvas":"#0c1018","surface":"#181e2b","surfaceSoft":"#121824","text":"#f1f5fc","body":"#d4ddea","muted":"#b6c3d6","accent":"#8cddf0","action":"#8cddf0","actionText":"#0c1018","rule":"#354054","ruleStrong":"#6b7f99","musicViolet":"#b49aff","selectionAmber":"#f3bf74"},
+    "hero":"#0d111a",
+    "selectionText":"#15151a"
+  },
+  "typography":{"family":"Chiaro Geist, system-ui, sans-serif","source":"self-hosted Geist variable","bodyRem":1,"heroClamp":"clamp(3.1rem, 6.2vw, 5.8rem)","heroTrackingEm":-0.055,"bodyLeading":1.62},
+  "space":{"unitPx":4,"sectionRem":{"small":5,"medium":6,"large":11},"shellRem":84,"controlMinRem":3},
+  "shape":{"materialRadiusPx":32,"mobileRadiusPx":24,"controlRadius":"999px","specularBorderPx":1},
+  "material":{"navigationBlurPx":28,"navigationOpacity":0.86,"content":"opaque slate; static specular edges","reduceTransparency":"opaque surface, no backdrop-filter"},
+  "motion":{"spring":{"subtle":{"stiffness":240,"damping":28,"mass":1},"tactile":{"stiffness":350,"damping":20,"mass":1},"reveal":{"stiffness":140,"damping":24,"mass":1}},"revealDurationSeconds":0.9,"pointer":{"perspectivePx":1000,"maximumTiltDegrees":5,"maximumScale":1.04,"depthPx":[24,32,40],"magneticRadiusPx":60,"magneticMaximumPx":7,"cursorSmoothingMs":38,"maximumFrameSeconds":0.032,"springSubstepSeconds":0.008},"reduced":"disable cursor, tilt, magnet, pin, scrub, reveal, depth and transitions"},
+  "layers":{"content":1,"navigation":50,"cursor":60},
+  "ownership":{"theme":"app/globals.css","pointer":"lib/tactile-runtime.ts","scroll":"components/marketing-motion.tsx"}
+}
