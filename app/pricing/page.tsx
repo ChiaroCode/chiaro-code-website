@@ -3,14 +3,12 @@ import { sitePath } from '@/lib/base-path';
 import { supportTestCheckoutUrl } from '@/lib/stripe-test-links';
 
 import { RideReadyPricing } from '@/components/ride-ready-pricing';
-import {
-  rideReadyPricingSummary,
-  rideReadyBillingNote,
-} from '@/lib/ride-ready-pricing';
+import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 
 export const metadata: Metadata = {
   title: 'Pricing & Availability',
-  description: `RideReady pilot pricing: ${rideReadyPricingSummary}. Billing terms and checkout are being finalized. Typing-to-MIDI 1.0.0 is available.`,
+  description:
+    'RideReady pilot pricing is under review. Contact for pilot availability. Typing-to-MIDI 1.0.0 is available to download.',
 };
 export const dynamic = 'force-static';
 
@@ -31,16 +29,15 @@ export default function PricingPage() {
       >
         <div>
           <p className="pricing-audience">For schools</p>
-          <p className="pricing-status">Pilot pricing</p>
+          <p className="pricing-status">Pricing under review</p>
         </div>
         <div className="pricing-copy">
           <h2 id="ride-ready-status-title">RideReady</h2>
           <RideReadyPricing />
           <p>{rideReadyBillingNote}</p>
           <p>
-            RideReady remains a limited pilot. These amounts do not yet specify
-            a billing period or an automatic renewal. Device licensing and the
-            Unlimited + Support plan’s scope will be confirmed before purchase.
+            Plan details and pricing are being researched before purchase
+            becomes available.
           </p>
           <div
             className="pricing-checkout"
@@ -55,8 +52,8 @@ export default function PricingPage() {
             </button>
           </div>
           <p className="checkout-note">
-            Payment, cancellation, refund, tax, and renewal terms must be
-            confirmed before checkout is enabled.
+            Live payments, tax and refund settings, and the remaining purchase
+            terms must be verified before checkout is enabled.
           </p>
           <a className="button-link" href={sitePath('/RideReady')}>
             Explore RideReady

@@ -11,7 +11,7 @@ Chiaro Code's website presents **Frictionless Access** to music education: less 
 
 ## Release policy
 
-RideReady remains a limited pilot. Its pilot amounts are 1 device $99, 2 devices $150, 5 devices $300, and Unlimited + Support $800. Billing period and renewal terms remain pending. RideReady checkout is disabled while billing terms and live payment access are unverified. The optional support section accepts only explicitly labeled Stripe **test-mode** links; unset or live-mode links render disabled. This is not a production checkout or payment-to-license fulfillment flow. Do not configure live links, secrets, email delivery, or deployment without the owner’s approval.
+RideReady remains a limited pilot. Public pricing is under review while market research is completed; contact for pilot availability. Candidate plans and amounts are kept privately outside this public repository. Checkout and automated license delivery remain disabled pending research, audit, and live vendor/account verification. The optional support section accepts only explicitly labeled Stripe **test-mode** links; unset or live-mode links render disabled. This is not a production checkout or payment-to-license fulfillment flow.
 
 Typing-to-MIDI links are maintained in `lib/typing-to-midi.ts`. Verify release assets and the tagged setup guide when updating them. Keep signing and platform testing notes consistent with the release.
 

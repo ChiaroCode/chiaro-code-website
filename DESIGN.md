@@ -80,7 +80,7 @@ The owner requested `/RideReady` with fluid animations and an interactive explan
 
 The release owner verified stable 2.2.1 and zoning prerelease 2.3.0. Per-boot online pairing, session revocation, optional MP3 chimes, and the update checker are labeled as planned for unreleased 2.4.0. Keep purchase controls pending until live Stripe settings, billing terms, and fulfillment are verified. Public installer links require verified anonymous access.
 
-- RideReady remains in development, with pilot amounts of 1 device $99, 2 devices $150, 5 devices $300, and Unlimited + Support $800. Billing period, renewal, and support scope remain pending. It is not a released download. Stripe setup stays test-only and paused; no live checkout or payment-to-license fulfillment is enabled.
+- RideReady remains in development. Public pricing is under review while market research is completed. No numerical plan offers, live checkout, public RideReady installers, or automated payment-to-license fulfillment are enabled.
 - Typing-to-MIDI version 1.0.0 is available for macOS and Windows. It sends MIDI and needs a compatible instrument app and MIDI routing to produce sound.
 - Do not include private finance prototypes, data, modules, secrets, or credentials in public routes, imports, build output, or client bundles.
 - Do not change static hosting, workflow, or project linkage as part of this visual iteration.
