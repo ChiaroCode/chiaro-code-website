@@ -7,6 +7,7 @@ Chiaro Code's website presents **Frictionless Access** to music education: less 
 - Home: mission, vision, and the connection between the two products.
 - Products: RideReady in development; Typing-to-MIDI with setup guidance and published v1.0.0 downloads.
 - Pricing: RideReady limited-pilot annual seat pricing and current test-checkout state; Typing-to-MIDI availability.
+- RideReady: `/RideReady`, an illustrative, user-controlled pickup walkthrough and `/RideReady#download` release availability. No real phone connection or automatic audio is started by the walkthrough.
 
 ## Release policy
 
@@ -15,6 +16,8 @@ RideReady remains a limited pilot. Its annual pilot price is $99 per device lice
 Typing-to-MIDI links are maintained in `lib/typing-to-midi.ts`. Verify release assets and the tagged setup guide when updating them. Keep signing and platform testing notes consistent with the release.
 
 ## Development and hosting
+
+The release owner verified stable version 2.2.1 and prerelease 2.3.0 on October 3, 2026. The stable checker manifest lives at `public/.well-known/rideready-release.json`. Keep it at 2.2.1 until the official next stable release and matching assets have been verified. Its fixed customer release page is `https://chiarocode.com/RideReady#download`. Do not link private GitHub installer assets before anonymous download access is confirmed. GitHub Pages manages the response cache lifetime; this change does not change hosting or set cache headers.
 
 Run `npm ci`, then `npm run dev`. Run `npx tsc --noEmit` for type checking and `npm run build` for the static export in `dist/client`.
 

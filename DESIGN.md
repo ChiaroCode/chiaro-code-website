@@ -74,6 +74,12 @@ Use the same shell across pages. Paired sections stack at compact widths. Images
 
 ## Product and privacy boundaries
 
+### RideReady route addition (October 3, 2026)
+
+The owner requested `/RideReady` with fluid animations and an interactive explanation. Preserve the sky/glass palette, system typography, existing routes, and host. The route uses an explicitly labeled illustration with fictional numbers, not a product screenshot. Its motion is limited to short transform/opacity transitions on entry and user-controlled step changes. No looping motion, autoplay audio, video, or phone connection is started. The optional browser speech example starts only from its labeled button and stops when navigating steps or leaving the route. Respect reduced motion, keyboard, touch, dark appearance, and 200% zoom.
+
+The release owner verified stable 2.2.1 and zoning prerelease 2.3.0. Per-boot online pairing, session revocation, optional MP3 chimes, and the update checker are labeled as planned for unreleased 2.4.0. Keep purchase controls pending until live Stripe settings, billing terms, and fulfillment are verified. Public installer links require verified anonymous access.
+
 - RideReady remains in development, with a limited pilot being prepared at $99 per device license per year. It is not a released download. Stripe setup stays test-only and paused; no live checkout or payment-to-license fulfillment is enabled.
 - Typing-to-MIDI version 1.0.0 is available for macOS and Windows. It sends MIDI and needs a compatible instrument app and MIDI routing to produce sound.
 - Do not include private finance prototypes, data, modules, secrets, or credentials in public routes, imports, build output, or client bundles.

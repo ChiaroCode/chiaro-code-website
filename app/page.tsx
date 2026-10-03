@@ -16,7 +16,7 @@ export default function HomePage() {
               RideReady is being developed to help staff call numbers and keep them visible on a shared display.
             </p>
             <div className="hero-actions">
-              <a className="button-link" href={sitePath('/products#ride-ready')}>Explore RideReady</a>
+              <a className="button-link" href={sitePath('/RideReady')}>Explore RideReady</a>
               <a className="text-link" href={sitePath('/pricing#ride-ready-status')}>Pilot pricing &amp; availability</a>
             </div>
             <p className="hero-pilot-note">Limited pilot being prepared <span aria-hidden="true">·</span> $99 per device license / year</p>
@@ -85,7 +85,7 @@ export default function HomePage() {
                 <p>RideReady is in development to help staff call numbers and keep them visible on a shared display.</p>
                 <span className="pathway-status status-development">In development</span>
               </div>
-              <a className="text-link" href={sitePath('/products#ride-ready')}>RideReady details</a>
+              <a className="text-link" href={sitePath('/RideReady')}>RideReady details</a>
             </article>
 
             <article className="home-pathway">

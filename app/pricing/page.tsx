@@ -28,11 +28,11 @@ export default function PricingPage() {
               ? <a className="button-link" href={rideReadyTestCheckoutUrl} target="_blank" rel="noreferrer">Open Stripe test checkout</a>
               : <button className="button-link is-disabled" type="button" disabled>Test checkout unavailable</button>}
           </div>
-          <p className="checkout-note">Annual subscription renews each year until canceled. Renewal, cancellation, refund, tax, and seat-quantity terms must be configured and reviewed in Stripe before checkout is enabled.</p>
+          <p className="checkout-note">Billing and renewal terms are being finalized. Renewal, cancellation, refund, tax, and seat-quantity terms must be configured and reviewed in Stripe before checkout is enabled.</p>
           {rideReadyTestCheckoutUrl
             ? <p className="checkout-note">This build opens Stripe test-mode checkout only. Its product, annual interval, and supported seat quantities must match the displayed plan; checkout cannot collect a live payment.</p>
             : <p className="checkout-note">The Stripe test Payment Link is not configured in this build. Its product, annual interval, and supported seat quantities must be verified before enabling checkout.</p>}
-          <a className="button-link" href={sitePath('/products#ride-ready')}>Explore RideReady</a>
+          <a className="button-link" href={sitePath('/RideReady')}>Explore RideReady</a>
         </div>
       </section>
       <section className="shell pricing-available" aria-labelledby="midi-status-title">

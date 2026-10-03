@@ -6,6 +6,7 @@ import { BrandMark } from '@/components/brand-mark';
 import { sitePath } from '@/lib/base-path';
 
 const navigation = [
+  { href: '/RideReady', label: 'RideReady' },
   { href: '/products', label: 'Products' },
   { href: '/pricing', label: 'Pricing' },
 ];

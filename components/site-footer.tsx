@@ -9,6 +9,7 @@ export function SiteFooter() {
           <p>Practical tools for the people around a lesson and the students ready to create.</p>
         </div>
         <nav aria-label="Footer navigation">
+          <a href={sitePath('/RideReady')}>RideReady</a>
           <a href={sitePath('/#about')}>Our approach</a>
           <a href={sitePath('/products')}>Products</a>
           <a href={sitePath('/pricing')}>Pricing</a>

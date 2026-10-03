@@ -49,6 +49,7 @@ export default function ProductsPage() {
           <div className="product-copy">
             <p>Running a music program means coordinating everything around the lesson, too. RideReady is being built to give staff a clear, synchronized way to call numbers and manage a busy pickup line.</p>
             <p>A dedicated controller manages the queue, while a shared display keeps called numbers visible. Less back-and-forth means more attention for the students in front of you.</p>
+            <a className="text-link" href={sitePath('/RideReady')}>Try the RideReady walkthrough</a>
           </div>
           <div className="feature-list" aria-label="RideReady features in development">
             {rideReadyFeatures.map((feature) => <article className="feature-item" key={feature.title}><h3>{feature.title}</h3><p>{feature.text}</p></article>)}
