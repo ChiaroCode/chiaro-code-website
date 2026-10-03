@@ -15,11 +15,34 @@ import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 import { sitePath } from '@/lib/base-path';
 import styles from './ride-ready.module.css';
 
+const rideReadyTitle = 'RideReady — A clearer pickup line';
+const rideReadyDescription =
+  'Explore RideReady with an interactive pickup walkthrough: pair a phone, call a number, confirm its zone, and keep the shared board clear. Pilot and release availability.';
+const rideReadyImage = {
+  url: 'https://chiarocode.com/images/ride-ready-icon.jpg',
+  width: 1080,
+  height: 1080,
+  type: 'image/jpeg',
+  alt: 'RideReady app icon: a blue car with the numbers four, five, and six',
+};
 export const metadata: Metadata = {
-  title: 'RideReady — A clearer pickup line',
-  description:
-    'Explore RideReady with an interactive pickup walkthrough: pair a phone, call a number, confirm its zone, and keep the shared board clear. Pilot and release availability.',
+  title: rideReadyTitle,
+  description: rideReadyDescription,
   alternates: { canonical: 'https://chiarocode.com/RideReady/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://chiarocode.com/RideReady/',
+    siteName: 'Chiaro Code',
+    title: rideReadyTitle,
+    description: rideReadyDescription,
+    images: [rideReadyImage],
+  },
+  twitter: {
+    card: 'summary',
+    title: rideReadyTitle,
+    description: rideReadyDescription,
+    images: [rideReadyImage],
+  },
 };
 export const dynamic = 'force-static';
 

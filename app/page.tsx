@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowUpRight, Keyboard, Monitor } from 'lucide-react';
 import { MarketingMotion } from '@/components/marketing-motion';
@@ -8,6 +9,36 @@ import {
   rideReadyBillingNote,
 } from '@/lib/ride-ready-pricing';
 import styles from './home.module.css';
+
+const homeTitle = 'Chiaro Code | Frictionless Access to Music Education';
+const homeDescription =
+  'Fewer barriers. More music. Chiaro Code builds practical tools for schools and students: RideReady for pickup logistics and Typing-to-MIDI for accessible music creation.';
+const companyImage = {
+  url: 'https://chiarocode.com/images/chiaro-code-mark.png',
+  width: 1254,
+  height: 1254,
+  type: 'image/png',
+  alt: 'Chiaro Code company logo: a planning grid flowing into music staff lines and two notes',
+};
+export const metadata: Metadata = {
+  title: { absolute: homeTitle },
+  description: homeDescription,
+  alternates: { canonical: 'https://chiarocode.com/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://chiarocode.com/',
+    siteName: 'Chiaro Code',
+    title: homeTitle,
+    description: homeDescription,
+    images: [companyImage],
+  },
+  twitter: {
+    card: 'summary',
+    title: homeTitle,
+    description: homeDescription,
+    images: [companyImage],
+  },
+};
 
 export const dynamic = 'force-static';
 const story =
