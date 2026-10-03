@@ -1,5 +1,20 @@
+@font-face {
+  font-family: 'Chiaro Geist';
+  src: url('/fonts/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 .page {
-  overflow: clip;
+  --font-ui: 'Chiaro Geist', system-ui, sans-serif;
+  font-family: var(--font-ui);
+  overflow-x: clip;
+}
+.page :global(.button-link),
+.page :global(.text-link) {
+  transition:
+    transform 250ms var(--ease-spatial),
+    opacity 250ms ease;
 }
 .page a svg,
 .page button svg {
@@ -11,23 +26,39 @@
   gap: 0.6rem;
 }
 .hero {
-  padding-block: clamp(3rem, 6vw, 5rem) 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  column-gap: clamp(2rem, 5vw, 5rem);
+  margin-top: 1.5rem;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border-radius: 2rem;
+  background: radial-gradient(ellipse at 100% 5%, #1b456e 0, #102d4f 65%);
+  color: #fff;
+  text-align: left;
+}
+.hero .productLabel,
+.hero h1 {
+  grid-column: 1 / -1;
 }
 .productLabel {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 2rem;
-  font-weight: 700;
+  color: #fff;
+  font-weight: 650;
   font-size: 1.12rem;
 }
 .productLabel img {
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 0.7rem;
+}
+.heroStatus {
+  color: #d5e5f2;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 .pilotBadge {
   display: inline-flex;
@@ -43,33 +74,54 @@
   background: var(--surface);
 }
 .hero h1 {
-  max-width: 12em;
-  margin: 0 auto;
-  font-size: clamp(3.2rem, 6.7vw, 6.8rem);
+  max-width: 70rem;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3.1rem, 6.5vw, 5.8rem);
+  line-height: 1.02;
+  font-weight: 600;
   letter-spacing: -0.055em;
+  text-wrap: balance;
 }
 .heroLede {
-  margin-block: 1.5rem 1.75rem;
-  color: var(--ink-soft);
+  grid-column: 1;
+  max-width: 30rem;
+  align-self: end;
+  margin-block: 2rem 1.75rem;
+  color: #d5e5f2;
   font-size: clamp(1.12rem, 2vw, 1.45rem);
   line-height: 1.55;
 }
 .actions {
+  grid-column: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 0.75rem 1.75rem;
+  align-self: start;
+  gap: 1rem 1.75rem;
+}
+.hero .actions {
+  --action: #fff;
+  --action-ink: #102d4f;
+  --action-hover: #d5e5f2;
+  --accent-strong: #fff;
+}
+.hero .actions a:focus-visible {
+  outline-color: #fff;
 }
 .heroBoard {
-  max-width: 61rem;
-  margin: clamp(2.5rem, 5vw, 4.5rem) auto 0;
-  padding: 1.5rem;
+  grid-column: 2;
+  grid-row: 3 / span 2;
+  align-self: center;
+  min-width: 0;
+  margin: 2.5rem 0 0;
+  padding: 1.3rem;
   border: 1px solid var(--rule);
-  border-radius: 1.75rem;
+  border-radius: 1.5rem;
   background: var(--surface);
   box-shadow: var(--shadow-panel);
   text-align: left;
+  transform: rotate(2deg);
 }
 .boardTop,
 .boardBottom {
@@ -96,14 +148,15 @@
 }
 .heroNumbers {
   display: grid;
+  grid-auto-flow: dense;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.55rem;
   margin-block: 1.4rem;
 }
 .heroNumbers > div {
   display: grid;
   justify-items: center;
-  padding: 1.3rem 1rem;
+  padding: 1.1rem 0.25rem;
   border: 1px solid var(--rule);
   border-radius: 1rem;
   background: var(--canvas);
@@ -117,7 +170,7 @@
 }
 .heroNumbers strong {
   color: inherit;
-  font-size: clamp(2.9rem, 6vw, 5.5rem);
+  font-size: clamp(2rem, 4vw, 3.7rem);
   letter-spacing: -0.065em;
   line-height: 1.35;
   font-weight: 650;
@@ -187,10 +240,7 @@
   background: var(--surface);
   font-size: 0.9rem;
   font-weight: 650;
-  transition:
-    transform 250ms var(--ease-spatial),
-    background-color 250ms ease,
-    color 250ms ease;
+  transition: transform 250ms var(--ease-spatial);
 }
 .stepButton:hover {
   transform: translateY(-2px);
@@ -689,8 +739,19 @@
   }
 }
 @media (max-width: 850px) {
+  .hero {
+    display: block;
+  }
   .hero h1 {
-    font-size: clamp(3.2rem, 8vw, 5rem);
+    font-size: clamp(3rem, 7vw, 4.6rem);
+  }
+  .heroBoard {
+    max-width: 38rem;
+    margin-top: 2.5rem;
+    transform: none;
+  }
+  .heroNumbers strong {
+    font-size: clamp(2.5rem, 6vw, 4rem);
   }
   .sectionHeading {
     grid-template-columns: 1fr;
@@ -742,7 +803,9 @@
 }
 @media (max-width: 560px) {
   .hero {
-    padding-top: 2.5rem;
+    padding: 1.5rem 1rem 2rem;
+    border-radius: 1.25rem;
+    margin-top: 1rem;
   }
   .productLabel {
     gap: 0.55rem;
@@ -757,13 +820,14 @@
     height: 2.3rem;
   }
   .hero h1 {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(2.4rem, 9.5vw, 3.5rem);
   }
   .wideBreak {
     display: none;
   }
   .actions {
-    gap: 0.75rem;
+    gap: 1rem;
+    align-items: flex-start;
     flex-direction: column;
   }
   .heroBoard {
@@ -802,13 +866,18 @@
   }
   .stepList {
     margin: 1rem 1rem 0;
-    gap: 0.35rem;
+    gap: 0.5rem;
+    grid-template-columns: repeat(5, minmax(5.5rem, 1fr));
+    overflow-x: auto;
+    padding: 0.4rem 0.2rem 0.75rem;
+    overscroll-behavior-x: contain;
   }
   .stepButton {
     flex-direction: column;
     gap: 0.35rem;
     padding: 0.6rem 0.15rem;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
+    min-height: 4rem;
     border-radius: 0.6rem;
   }
   .stepIcon svg {

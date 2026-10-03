@@ -171,6 +171,9 @@ export function RideReadyDemo() {
               <label htmlFor="demo-number">Example number</label>
               <input
                 id="demo-number"
+                name="example-number"
+                autoComplete="off"
+                spellCheck={false}
                 type="text"
                 inputMode="numeric"
                 pattern="[0-9]{1,4}"
@@ -191,6 +194,8 @@ export function RideReadyDemo() {
               <label htmlFor="demo-zone">Pickup zone</label>
               <select
                 id="demo-zone"
+                name="pickup-zone"
+                autoComplete="off"
                 value={zone}
                 onChange={(event) => setZone(event.target.value)}
               >

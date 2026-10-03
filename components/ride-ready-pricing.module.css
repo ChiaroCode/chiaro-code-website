@@ -1,0 +1,44 @@
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+.plans > div {
+  min-width: 0;
+  padding: clamp(0.9rem, 2vw, 1.4rem);
+  border: 1px solid var(--rule-strong);
+  border-radius: 1rem;
+  background: var(--canvas);
+}
+.plans dt {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.plans dd {
+  margin: 0.75rem 0 0;
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 560px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+  .plans > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+  }
+  .plans dd {
+    margin: 0;
+  }
+}

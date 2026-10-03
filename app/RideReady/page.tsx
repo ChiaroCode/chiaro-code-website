@@ -9,6 +9,9 @@ import {
   Volume2,
 } from 'lucide-react';
 import { RideReadyDemo } from '@/components/ride-ready-demo';
+import { MarketingMotion } from '@/components/marketing-motion';
+import { RideReadyPricing } from '@/components/ride-ready-pricing';
+import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 import { sitePath } from '@/lib/base-path';
 import styles from './ride-ready.module.css';
 
@@ -22,7 +25,14 @@ export const dynamic = 'force-static';
 
 export default function RideReadyPage() {
   return (
-    <div className={styles.page}>
+    <MarketingMotion className={styles.page}>
+      <link
+        rel="preload"
+        href={sitePath('/fonts/geist-variable.woff2')}
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
       <section
         className={`${styles.hero} shell`}
         aria-labelledby="rideready-title"
@@ -36,9 +46,9 @@ export default function RideReadyPage() {
             aria-hidden="true"
           />
           <span>RideReady</span>
-          <span className={styles.pilotBadge}>Pilot in development</span>
+          <span className={styles.heroStatus}>Pilot in development</span>
         </div>
-        <h1 id="rideready-title">
+        <h1 id="rideready-title" data-motion-enter>
           A calmer way
           <br />
           to call the next ride.
@@ -162,8 +172,9 @@ export default function RideReadyPage() {
       <section
         className={`${styles.releaseSection} shell`}
         aria-labelledby="release-title"
+        data-scroll-story
       >
-        <div>
+        <div data-pin-title>
           <p className="section-label">In progress</p>
           <h2 id="release-title">
             A fresh session.
@@ -249,14 +260,8 @@ export default function RideReadyPage() {
           <div className={styles.availabilityCard}>
             <span className={styles.pilotBadge}>Stable version 2.2.1</span>
             <h3>RideReady pilot</h3>
-            <p className={styles.price}>
-              $99 <span>per device license / year</span>
-            </p>
-            <p>
-              Current published pilot pricing. Billing terms and live checkout
-              are being finalized; purchasing and automated license delivery are
-              not enabled.
-            </p>
+            <RideReadyPricing />
+            <p>{rideReadyBillingNote}</p>
             <p>
               Public download access is being prepared. Verified installer links
               will appear here when available.
@@ -274,6 +279,6 @@ export default function RideReadyPage() {
           </div>
         </div>
       </section>
-    </div>
+    </MarketingMotion>
   );
 }

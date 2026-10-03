@@ -1,0 +1,505 @@
+@font-face {
+  font-family: 'Chiaro Geist';
+  src: url('/fonts/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+.page {
+  overflow-x: clip;
+  font-family: 'Chiaro Geist', var(--font-ui);
+  --font-ui: 'Chiaro Geist', system-ui, sans-serif;
+}
+.page :global(.button-link) {
+  gap: 0.65rem;
+}
+.page :global(.button-link),
+.page :global(.text-link),
+.storyTabs button,
+.storyControls button {
+  transition:
+    transform 250ms var(--ease-spatial),
+    opacity 250ms ease;
+}
+.heroBand {
+  background: radial-gradient(
+    ellipse at 84% 52%,
+    #244f77 0%,
+    #163756 35%,
+    #102d4f 75%
+  );
+  color: #fff;
+  --ink: #fff;
+  --ink-soft: #e4f1fc;
+  --muted: #c0d5e8;
+  --accent-strong: #fff;
+  --action: #fff;
+  --action-ink: #102d4f;
+  --action-hover: #d9efff;
+}
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: 2rem;
+  padding-block: clamp(4.5rem, 7.5vw, 7.5rem) clamp(5rem, 9vw, 9rem);
+  align-items: center;
+}
+.heroCopy {
+  position: relative;
+  z-index: 2;
+}
+.heroCopy > p:first-child {
+  color: #bcd8f0;
+  margin: 0 0 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.hero h1 {
+  max-width: 70rem;
+  margin: 0;
+  font-size: clamp(3.1rem, 6.2vw, 5.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  font-weight: 620;
+}
+.lede {
+  max-width: 33rem;
+  margin: 1.8rem 0;
+  font-size: clamp(1.12rem, 1.6vw, 1.35rem);
+  color: #d5e5f2;
+}
+.heroActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.6rem;
+}
+.heroNote {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  color: #bfd4e7;
+  font-size: 0.92rem;
+}
+.heroVisual {
+  position: relative;
+  z-index: 1;
+  margin: 3.5rem 0 0 -2.5rem;
+}
+.heroVisual img {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 2.5rem 5rem #00122666;
+  transform: rotate(4deg);
+}
+.heroVisual figcaption {
+  padding-top: 1.7rem;
+  padding-left: 0.9rem;
+  color: #d5e5f2;
+  font-size: 0.87rem;
+}
+.interest {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+.sectionIntro {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem 4rem;
+  margin-bottom: 3rem;
+  align-items: end;
+}
+.sectionIntro h2 {
+  max-width: 18ch;
+  font-size: clamp(2.5rem, 4.7vw, 4.4rem);
+  font-weight: 600;
+}
+.sectionIntro p {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+.chooser {
+  border: 1px solid var(--rule-strong);
+  border-radius: 1.4rem;
+  overflow: clip;
+  background: var(--surface);
+}
+.storyTabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.storyTabs button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 5.2rem;
+  padding: 1.2rem 1.5rem;
+  border: 0;
+  border-right: 1px solid var(--rule-strong);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+.storyTabs button:last-child {
+  border-right: 0;
+}
+.storyTabs button[aria-expanded='true'] {
+  background: var(--ink);
+  color: var(--surface);
+}
+.storyTabs button:hover svg {
+  transform: translate(3px, -3px);
+}
+.storyTabs button svg {
+  flex: 0 0 auto;
+  transition: transform 250ms var(--ease-spatial);
+}
+.storyTabs button:focus-visible {
+  outline-offset: -5px;
+}
+.storyPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(1.5rem, 4.5vw, 4rem);
+  align-items: center;
+  min-height: 30rem;
+}
+.storyArtwork {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.2;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--canvas);
+  padding: 2.2rem;
+}
+.storyArtwork img {
+  width: 100%;
+  height: auto;
+  max-width: 19rem;
+  border-radius: 1rem;
+}
+.storyCopy h3 {
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  max-width: 17ch;
+  font-weight: 610;
+}
+.storyCopy > p:not(:first-child) {
+  max-width: 33rem;
+  margin-block: 1.4rem;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+.storyStatus {
+  margin: 0 0 1rem;
+  color: var(--accent-strong);
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+.storyControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+.storyControls > div {
+  display: flex;
+  gap: 0.65rem;
+}
+.storyControls button {
+  display: grid;
+  place-items: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+}
+.storyControls button:hover {
+  transform: translateY(-2px);
+}
+.storyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 7vw, 7rem);
+}
+.storyBand {
+  background: #102d4f;
+  color: #fff;
+  padding-block: clamp(5rem, 10vw, 10rem);
+}
+.storyTitle {
+  align-self: start;
+}
+.storyTitle h2 {
+  color: #fff;
+  font-size: clamp(2.4rem, 4.2vw, 4rem);
+  font-weight: 600;
+  max-width: 15ch;
+}
+.inlineImage {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.8em;
+  height: 0.85em;
+  margin: 0 0.1em;
+  overflow: clip;
+  border-radius: 999px;
+}
+.inlineImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 55%;
+}
+.storyTitle > p {
+  color: #c0d5e8;
+  max-width: 25rem;
+  margin-top: 1.6rem;
+}
+.storySentence {
+  position: relative;
+  margin: 0 0 3rem;
+  color: #c0d5e8;
+  font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+}
+.wordOverlay {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+  pointer-events: none;
+}
+.wordOverlay span {
+  display: inline;
+}
+.festival {
+  margin: 0;
+}
+.festival img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+}
+.festival figcaption {
+  color: #c0d5e8;
+  margin-top: 1rem;
+  font-size: 0.86rem;
+}
+.storyFact {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: start;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #476481;
+}
+.storyFact svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #b4daff;
+}
+.storyFact h3 {
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+.storyFact p {
+  color: #c0d5e8;
+  margin-bottom: 0;
+}
+.action {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+.action h2 {
+  max-width: 20ch;
+  font-size: clamp(2.7rem, 5.3vw, 5rem);
+  font-weight: 600;
+}
+.action > p {
+  max-width: 42rem;
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  margin-block: 1.6rem 2rem;
+}
+.actionLinks {
+  display: flex;
+  gap: 1.25rem 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.actionNote {
+  margin-top: 2rem;
+  max-width: 43rem;
+  font-size: 0.9rem;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@keyframes story-in {
+  from {
+    opacity: 0.5;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .storyArtwork,
+  .storyCopy {
+    animation: story-in 450ms var(--ease-spatial) both;
+  }
+}
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(3.1rem, 8vw, 5.2rem);
+  }
+  .heroVisual {
+    margin: 0;
+    max-width: 23rem;
+    justify-self: end;
+  }
+  .heroVisual img {
+    transform: rotate(2deg);
+  }
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+  .storyTitle h2 {
+    max-width: 23ch;
+  }
+  .storyPanel {
+    min-height: 27rem;
+  }
+}
+@media (max-width: 560px) {
+  .hero {
+    padding-block: 3.7rem 4.5rem;
+    gap: 2.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 11vw, 3.8rem);
+  }
+  .heroActions {
+    align-items: start;
+    flex-direction: column;
+  }
+  .heroVisual {
+    max-width: 14rem;
+    margin-right: 0.5rem;
+  }
+  .heroVisual img {
+    border-radius: 1.3rem;
+  }
+  .heroVisual figcaption {
+    font-size: 0.8rem;
+    padding-left: 0;
+  }
+  .interest {
+    padding-block: 4.5rem;
+  }
+  .sectionIntro {
+    margin-bottom: 2rem;
+  }
+  .sectionIntro h2 {
+    font-size: 2.5rem;
+  }
+  .storyTabs {
+    grid-template-columns: 1fr;
+  }
+  .storyTabs button {
+    flex-direction: row;
+    min-height: 3.8rem;
+    padding: 1rem 1.2rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-strong);
+    font-size: 1rem;
+  }
+  .storyTabs button:last-child {
+    border-bottom: 0;
+  }
+  .storyPanel {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+  .storyArtwork {
+    aspect-ratio: 1.5;
+    padding: 1.1rem;
+  }
+  .storyArtwork img {
+    max-width: 10rem;
+  }
+  .storyCopy h3 {
+    font-size: 2rem;
+  }
+  .storyBand {
+    padding-block: 4.5rem;
+  }
+  .storyTitle h2 {
+    font-size: 2.5rem;
+  }
+  .storySentence {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .storyGrid {
+    gap: 2rem;
+  }
+  .action {
+    padding-block: 4.5rem;
+  }
+  .action h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.heroVisual img,
+.storyArtwork img,
+.festival img,
+.inlineImage img {
+  transition: transform 400ms var(--ease-spatial);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .heroVisual:hover img {
+    transform: rotate(2deg) scale(1.025);
+  }
+  .storyArtwork:hover img,
+  .festival:hover img {
+    transform: scale(1.025);
+  }
+  .inlineImage:hover img {
+    transform: scale(1.1);
+  }
+}

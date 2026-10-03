@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { sitePath } from '@/lib/base-path';
+import { rideReadyPricingSummary, rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 import { midiDownloads, midiGuideUrl, midiReleaseUrl } from '@/lib/typing-to-midi';
 
 export const metadata: Metadata = {
@@ -56,7 +57,7 @@ export default function ProductsPage() {
           </div>
           <div className="availability-note" id="downloads">
             <h3>Being prepared for a limited pilot.</h3>
-            <p>Annual pilot pricing is $99 per device license. Checkout and automated license delivery are not enabled. See pricing and availability for the current test-only checkout status.</p>
+            <p>Pilot pricing: {rideReadyPricingSummary}. {rideReadyBillingNote}</p>
             <a className="button-link" href={sitePath('/pricing#ride-ready-status')}>Pilot pricing &amp; availability</a>
           </div>
         </div>
