@@ -90,7 +90,8 @@ export function ProductStoryChooser() {
   }
   return (
     <div className={styles.chooser}>
-      <div className={styles.storyTabs} aria-label="Choose a product story">
+      <fieldset className={styles.storyTabs}>
+        <legend className={styles.srOnly}>Choose a product story</legend>
         {stories.map((item, index) => (
           <button
             key={item.key}
@@ -104,8 +105,8 @@ export function ProductStoryChooser() {
             <ArrowUpRight size={20} aria-hidden="true" />
           </button>
         ))}
-      </div>
-      <div
+      </fieldset>
+      <section
         id="product-story-panel"
         className={styles.storyPanel}
         aria-labelledby="product-story-title"
@@ -132,7 +133,7 @@ export function ProductStoryChooser() {
             <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </div>
-      </div>
+      </section>
       <div className={styles.storyControls}>
         <span>
           {selected + 1} / {stories.length}

@@ -20,20 +20,17 @@
   color: var(--muted);
   font-size: 0.9rem;
 }
+.copy .productLabel {
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem;
+}
 .stage {
   position: relative;
-  padding: 2.5rem 1rem 1rem;
+  padding: 3.5rem 1rem 1rem;
   isolation: isolate;
   min-width: 0;
-}
-.ambient {
-  position: absolute;
-  inset: -3rem;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse at 20% 35%, #42b4db20, transparent 58%),
-    radial-gradient(ellipse at 85% 75%, #937cf81a, transparent 62%);
-  pointer-events: none;
 }
 .backplate {
   position: absolute;
@@ -86,55 +83,69 @@
 }
 .visualizer {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 5px;
+  gap: 1.25rem;
   min-height: 13rem;
   height: 13rem;
   margin: 1.25rem 0;
-  padding: 1.25rem;
+  padding: 1rem;
   overflow: clip;
   border: 1px solid var(--rule);
   border-radius: 1.3rem;
   background: var(--canvas);
   transform: translateZ(24px);
 }
-.staff {
-  position: absolute;
-  inset: 33% 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--rule),
-    var(--rule) 1px,
-    transparent 1px,
-    transparent 14px
-  );
+.pitch {
+  display: grid;
+  min-width: 0;
+  text-align: center;
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 600;
 }
-.bar {
-  height: 100%;
-  position: relative;
-  width: 6px;
-  flex: 0 1 6px;
-  background: var(--music-violet);
-  border-radius: 4px;
-  transform-origin: center;
+.pitch svg {
+  width: 100%;
+  height: auto;
+  max-height: 9rem;
+  overflow: visible;
+}
+.pitch line {
+  stroke: var(--muted);
+  stroke-width: 1;
 }
 .note {
+  fill: var(--music-violet);
+}
+.note path {
+  stroke: var(--music-violet);
+  stroke-width: 3;
+  fill: none;
+}
+.message {
   display: grid;
-  place-items: center;
-  position: absolute;
-  left: calc(50% - 2rem);
-  top: calc(50% - 2rem);
-  width: 4rem;
-  height: 4rem;
-  border: 1px solid var(--rule-strong);
-  border-radius: 1rem;
-  background: var(--surface);
+  gap: 0.9rem;
+  margin: 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rule-strong);
+  font-variant-numeric: tabular-nums;
+}
+.message dt {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+.message dd {
   color: var(--ink);
-  font-size: 1.6rem;
-  font-weight: 650;
-  box-shadow: 0 8px 30px #00000030;
+  margin: 0.1rem 0 0;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.message dd span {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 .keys {
   display: grid;
@@ -253,8 +264,11 @@
   .visualizer {
     min-height: 11rem;
     height: 11rem;
-    gap: 3px;
+    gap: 0.75rem;
     padding: 0.75rem;
+  }
+  .message {
+    padding-left: 0.75rem;
   }
 }
 @media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {

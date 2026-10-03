@@ -12,17 +12,17 @@ stack: React 19, TypeScript, CSS modules, GSAP 3, native pointer events
 ```
 ┌ quiet backplate ─────────────────────┐
   ┌ stationary host / moving panel ──────┐
-  │ From a key to a note  ·  illustration │
-  │ violet bars + selected-note lens     │
+  │ From a key to MIDI  ·  illustration   │
+  │ pitch E4    · note 64 / velocity 74   │
   │ [C] [D] [E] [F] [G] [A] [B]          │
-  │ Visual energy ────────────────●       │
-  │ E selected · 58% · no sound           │
+  │ Illustrated velocity ────────●        │
+  │ E4 selected · MIDI 64 · no sound      │
   └──────────────────────────────────────┘
 ```
 
 ## Props and mounting
 
-`TactileSurface({ children: ReactNode, className?: string })` is the reusable tilt shell. `MagneticLink({ children: ReactNode, href: string, className?: string })` supplies a stable anchor hit region with a moving visual child. `MusicMaterial()` composes both with seven native note buttons, a labeled native range and discrete React state. Change its strings or pass your own content to the primitive; never imply it is a working MIDI device.
+`TactileSurface({ children: ReactNode, className?: string })` is the reusable tilt shell. `MagneticLink({ children: ReactNode, href: string, className?: string })` supplies a stable anchor hit region with a moving visual child. `MusicMaterial()` composes both with seven native note buttons, a labeled native range and discrete React state. Selected C–B maps to example C4–B4 notes 60, 62, 64, 65, 67, 69, 71. Internal range state 10–100 scales to illustrative velocity 13–127; `aria-valuetext` describes the displayed velocity. This does not specify the real app's key mapping or send any MIDI. Change its strings or pass your own content to the primitive; never imply it is a working MIDI device.
 
 ```tsx
 // Mount exactly once in your root layout:
@@ -40,11 +40,11 @@ Copy `components/{tactile-surface,cursor-halo,music-material}.tsx`, their CSS mo
 
 ## Mobile and accessibility
 
-At ≤1000px the story stacks. At ≤560px the decorative backplate disappears and the panel padding contracts, with seven 48px-high buttons. Coarse pointers flatten depth/tilt; range touch drag and note taps remain. Reduced motion disables pointer decoration and GSAP decoration while keeping note and energy state. Native cursor, scrolling, focus and keyboard behavior are preserved. Opaque/stronger material fallbacks support reduced transparency and increased contrast. Amber has explicit pressed state and a text label; the illustration produces no sound.
+At ≤1000px the story stacks. At ≤560px the decorative backplate disappears and the panel padding contracts, with seven 48px-high buttons. Coarse pointers flatten depth/tilt; range touch drag and note taps remain. Reduced motion disables pointer decoration and GSAP decoration while keeping note and example velocity state. Native cursor, scrolling, focus and keyboard behavior are preserved. Opaque/stronger material fallbacks support reduced transparency and increased contrast. Amber has explicit pressed state and a text label; the illustration produces no sound.
 
 ## Motion variants
 
-Quiet: only discrete note/bar state, static panel, no cursor. Standard: finite tilt ±5°, 1.04 scale, 38ms cursor smoothing and 60px magnetic radius. Editorial: add scoped GSAP 0.9s reveal mask and desktop depth stack. Reduced: static surface, no cursor, magnet, pin, scrub or reveal. The three presets and physics limits are in the token JSON and architecture document.
+Quiet: only discrete note/message state, static panel, no cursor. Standard: finite tilt ±5°, 1.04 scale, 38ms cursor smoothing and 60px magnetic radius. Editorial: add scoped GSAP 0.9s reveal mask and desktop depth stack. Reduced: static surface, no cursor, magnet, pin, scrub or reveal. The three presets and physics limits are in the token JSON and architecture document.
 
 ## Dark appearance
 

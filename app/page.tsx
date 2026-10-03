@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { ArrowUpRight, Keyboard, Monitor } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Keyboard, Monitor } from 'lucide-react';
 import { MarketingMotion } from '@/components/marketing-motion';
 import { MusicMaterial } from '@/components/music-material';
 import { TactileSurface, MagneticLink } from '@/components/tactile-surface';
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 const story =
-  'A lesson starts before the first note. Clear the practical barriers around it, and make more room for the music itself.';
+  'A called number on a shared board. A familiar keyboard sending a note. Small tools that clear the way for music.';
 
 export default function HomePage() {
   return (
@@ -62,7 +62,7 @@ export default function HomePage() {
           aria-labelledby="home-title"
         >
           <div className={styles.heroCopy}>
-            <p>Practical tools. More room for music.</p>
+            <p>RideReady · Pickup coordination</p>
             <h1 id="home-title" className={styles.revealMask}>
               <span data-mask-reveal>
                 A clearer
@@ -71,8 +71,9 @@ export default function HomePage() {
               </span>
             </h1>
             <p className={styles.lede}>
-              RideReady is in development to help staff call numbers and keep a
-              shared display clear.
+              For staff coordinating pickup. RideReady is in development to call
+              a number from a controller and keep it visible on a shared
+              display.
             </p>
             <div className={styles.heroActions}>
               <MagneticLink href={sitePath('/RideReady')}>
@@ -88,16 +89,45 @@ export default function HomePage() {
             </div>
           </div>
           <figure className={styles.heroVisual} data-motion-enter>
-            <TactileSurface>
-              <Image
-                src={sitePath('/images/ride-ready-icon.jpg')}
-                alt="RideReady app icon showing a blue car with the numbers four, five, and six"
-                width={1080}
-                height={1080}
-                priority
-              />
+            <TactileSurface className={styles.pickupSurface}>
+              <div className={styles.pickupDiagram}>
+                <div className={styles.pickupBrand}>
+                  <Image
+                    src={sitePath('/images/ride-ready-icon.jpg')}
+                    alt=""
+                    width={1080}
+                    height={1080}
+                    priority
+                  />
+                  <div>
+                    <strong>RideReady</strong>
+                    <span>In development</span>
+                  </div>
+                </div>
+                <dl className={styles.pickupCall}>
+                  <dt>01 · Staff controller</dt>
+                  <dd>247</dd>
+                </dl>
+                <p className={styles.pickupConnection}>
+                  <ArrowDown size={18} aria-hidden="true" />
+                  The same number, in view
+                </p>
+                <div className={styles.pickupBoard}>
+                  <p>02 · Shared display</p>
+                  <dl>
+                    <div>
+                      <dt>Called now</dt>
+                      <dd>247</dd>
+                    </div>
+                    <div>
+                      <dt>Earlier call</dt>
+                      <dd>408</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
             </TactileSurface>
-            <figcaption>Call a number. Keep it in view.</figcaption>
+            <figcaption>Illustrated flow · fictional numbers</figcaption>
           </figure>
         </section>
       </div>
@@ -123,16 +153,8 @@ export default function HomePage() {
         <div className={`${styles.storyGrid} shell`} data-scroll-story>
           <div className={styles.storyTitle} data-pin-title>
             <h2 id="access-title">
-              Make room{' '}
-              <span className={styles.inlineImage}>
-                <Image
-                  src={sitePath('/images/chiaro-festival-story.png')}
-                  alt=""
-                  aria-hidden="true"
-                  width={1672}
-                  height={941}
-                />
-              </span>{' '}
+              Make room
+              <br />
               for music.
             </h2>
             <p>
@@ -193,9 +215,9 @@ export default function HomePage() {
         aria-labelledby="start-title"
       >
         <h2 id="start-title">
-          Start with what
+          Start with
           <br />
-          is ready.
+          Typing-to-MIDI.
         </h2>
         <p>
           Typing-to-MIDI version 1.0.0 is available for macOS and Windows.
@@ -212,10 +234,16 @@ export default function HomePage() {
             RideReady release &amp; pilot status
           </a>
         </div>
-        <p className={styles.actionNote}>
-          RideReady pilot pricing: {rideReadyPricingSummary}.{' '}
-          {rideReadyBillingNote}
-        </p>
+        <aside className={styles.pilotNote} aria-labelledby="home-pilot-title">
+          <div>
+            <p id="home-pilot-title">RideReady pilot plan</p>
+            <h3>{rideReadyPricingSummary}</h3>
+            <a className="text-link" href={sitePath('/pricing')}>
+              View pilot availability &amp; terms
+            </a>
+          </div>
+          <p>{rideReadyBillingNote}</p>
+        </aside>
       </section>
     </MarketingMotion>
   );

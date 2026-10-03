@@ -6,9 +6,9 @@ Dials: design variance 7, motion intensity 5, visual density 3. This is an evolu
 
 ## Roles and signature
 
-Obsidian is the dark canvas, slate is the elevated content material, and light mode uses cool neutral surfaces. Cyan indicates actions, violet belongs to the illustrative notes, and amber identifies the selected note. Meaning also appears in text and native pressed state. Only the compact floating navigation uses a 28px backdrop blur. Content panels use opaque fills, double specular edges, and a static shadow. A fixed radial wash suggests stage light without a perpetual loop or animated filter.
+Obsidian is the dark canvas, slate is the elevated content material, and light mode uses cool neutral surfaces. Cyan indicates actions, violet belongs to the illustrative notes, and amber identifies the selected note. Meaning also appears in text and native pressed state. Only the compact floating navigation uses a 28px backdrop blur. Content panels use opaque fills, double specular edges, and a static shadow.
 
-The signature is the music surface: a quiet backplate, a readable panel, and notes/keys on two shallow depth planes. Pointer tilt is bounded at 5 degrees and 1.04 scale with a 1000px perspective. The panel never conveys real product capabilities: it explicitly says Silent illustration and does not connect to MIDI or make sound.
+The signature is the music surface: a quiet backplate, a readable panel, and a note/message and keys on two shallow depth planes. Selecting C–B shows an illustrative C4–B4 pitch and MIDI note number; the slider changes an example velocity. These are music concepts, not the app's keyboard mapping or a connected device. Pointer tilt is bounded at 5 degrees and 1.04 scale with a 1000px perspective. The panel explicitly says Silent illustration and does not connect to MIDI or make sound.
 
 ## Tokens and hierarchy
 
@@ -20,7 +20,7 @@ The original company image is unchanged, including its original transparency and
 
 ```
 Wide:   [floating brand + navigation]
-        [two-line RideReady heading/actions] [real car icon, shallow tilt]
+        [two-line RideReady heading/actions] [illustrated number handoff, shallow tilt]
         [three manual product-story choices / expanded content]
         [music explanation] [layered silent instrument]
         [pinned mission title] [readable text + actual artwork + facts]
@@ -28,7 +28,7 @@ Wide:   [floating brand + navigation]
 Narrow: each pair becomes one column; layers flatten; controls remain reachable.
 ```
 
-Seed 1032026 selects editorial split, inline typography imagery, accordion slices and a notation strip, with image reveals/depth stacking. Existing Geist overrides the randomized Cabinet choice to preserve the brand. The chosen partner-marquee architecture is translated to stationary notation rather than fictional partners or continuous animation. The existing controlled story chooser and typography image remain; no fake testimonials are added. Three choices fill three columns with no vacant grid cells. The hero remains two desktop lines without decorative badges or statistics.
+The editorial split, controlled story chooser, notation, image reveals and depth stack remain. Geist preserves the current brand. The hero illustrates the same fictional number in a staff controller and shared display, labeled in development and illustrative. The music interaction shows a note/message relationship instead of audio-like bars. The full mission artwork remains, while its duplicate tiny headline crop is removed. Closing pilot pricing has a distinct summary and readable complete billing note. Three product choices fill three columns with no vacant cells. No fake testimonials, partners, metrics, or live connections are added.
 
 ## Motion and access
 

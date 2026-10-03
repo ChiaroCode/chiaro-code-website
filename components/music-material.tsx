@@ -5,10 +5,12 @@ import { TactileSurface, MagneticLink } from './tactile-surface';
 import { sitePath } from '@/lib/base-path';
 import styles from './music-material.module.css';
 const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+const midiNotes = [60, 62, 64, 65, 67, 69, 71];
 /** A silent, illustrative interaction; it does not connect to a MIDI device. */
 export function MusicMaterial() {
   const [selected, setSelected] = useState(2);
   const [intensity, setIntensity] = useState(58);
+  const exampleVelocity = Math.round(intensity * 1.27);
   return (
     <section
       className={`${styles.section} shell`}
@@ -16,17 +18,19 @@ export function MusicMaterial() {
       id="music-material"
     >
       <div className={styles.copy}>
+        <p className={styles.productLabel}>Typing-to-MIDI · Version 1.0.0</p>
         <h2 id="music-material-title">
-          A small gesture.
-          <br />A new way in.
+          Type a key.
+          <br />
+          Send a note.
         </h2>
         <p>
-          A familiar keyboard can open a musical door. Typing-to-MIDI connects
-          it to compatible music software.
+          Typing-to-MIDI turns a laptop keyboard into a MIDI controller for
+          compatible music software. That software supplies the sound.
         </p>
         <p className={styles.instruction} id="music-instructions">
-          Explore this silent illustration. Choose a note, then drag the energy
-          slider or use its arrow keys.
+          Try the silent illustration: choose a note, then adjust its example
+          velocity. No music software is connected.
         </p>
         <MagneticLink href={sitePath('/products#midi-downloads')}>
           Explore Typing-to-MIDI{' '}
@@ -34,36 +38,54 @@ export function MusicMaterial() {
         </MagneticLink>
       </div>
       <div className={styles.stage} data-depth-stack>
-        <div className={styles.ambient} aria-hidden="true" />
         <div className={styles.backplate} data-stack-layer aria-hidden="true">
-          <span>Space for a first note.</span>
-          <span>Chiaro Code</span>
+          <span>A message for music software</span>
+          <span>MIDI</span>
         </div>
         <TactileSurface className={styles.instrument}>
           <div className={styles.panel}>
             <div className={styles.top}>
-              <span>From a key to a note</span>
+              <span>From a key to MIDI</span>
               <span>Silent illustration</span>
             </div>
-            <div className={styles.visualizer} aria-hidden="true">
-              <div className={styles.staff} />
-              {Array.from({ length: 23 }, (_, i) => (
-                <span
-                  key={i}
-                  className={styles.bar}
-                  style={{
-                    transform: `scaleY(${0.18 + Math.abs(Math.sin((i + selected) * 0.64)) * intensity * 0.0085})`,
-                    opacity:
-                      0.3 + Math.abs(Math.sin((i + selected) * 0.64)) * 0.7,
-                  }}
-                />
-              ))}
-              <span
-                className={styles.note}
-                style={{ transform: `translateY(${(3 - selected) * 8}px)` }}
-              >
-                {notes[selected]}
-              </span>
+            <div className={styles.visualizer}>
+              <div className={styles.pitch} aria-hidden="true">
+                <svg viewBox="0 0 200 160" focusable="false">
+                  {[50, 66, 82, 98, 114].map((y) => (
+                    <line key={y} x1="0" x2="200" y1={y} y2={y} />
+                  ))}
+                  {selected === 0 && (
+                    <line x1="75" x2="125" y1="130" y2="130" />
+                  )}
+                  <g
+                    className={styles.note}
+                    style={{ transform: `translateY(${-selected * 8}px)` }}
+                  >
+                    <ellipse
+                      cx="100"
+                      cy="130"
+                      rx="13"
+                      ry="9"
+                      transform="rotate(-15 100 130)"
+                    />
+                    <path d="M112 128V76" />
+                  </g>
+                </svg>
+                <span>{notes[selected]}4</span>
+              </div>
+              <dl className={styles.message} aria-label="Example MIDI message">
+                <div>
+                  <dt>Note number</dt>
+                  <dd>{midiNotes[selected]}</dd>
+                </div>
+                <div>
+                  <dt>Example velocity</dt>
+                  <dd>
+                    {exampleVelocity}
+                    <span> / 127</span>
+                  </dd>
+                </div>
+              </dl>
             </div>
             <fieldset
               className={styles.keys}
@@ -89,8 +111,8 @@ export function MusicMaterial() {
               ))}
             </fieldset>
             <div className={styles.energy}>
-              <label htmlFor="music-energy">Visual energy</label>
-              <output htmlFor="music-energy">{intensity}%</output>
+              <label htmlFor="music-energy">Illustrated velocity</label>
+              <output htmlFor="music-energy">{exampleVelocity} / 127</output>
               <input
                 id="music-energy"
                 name="visual-energy"
@@ -98,11 +120,13 @@ export function MusicMaterial() {
                 min="10"
                 max="100"
                 value={intensity}
+                aria-valuetext={`${exampleVelocity} of 127, illustrative MIDI velocity`}
                 onChange={(event) => setIntensity(Number(event.target.value))}
               />
             </div>
             <output className={styles.status}>
-              {notes[selected]} selected · {intensity}% visual energy · no sound
+              {notes[selected]}4 selected · MIDI note {midiNotes[selected]} · no
+              sound
             </output>
           </div>
         </TactileSurface>
