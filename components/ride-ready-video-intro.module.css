@@ -138,6 +138,9 @@
 @media (prefers-reduced-motion: no-preference) {
   .endCue { animation: cue-appear 320ms ease-out both; }
 }
+@media (max-width: 560px) {
+  .intro { height: calc(100svh - 5.125rem); }
+}
 @media (forced-colors: active) {
   .controls button { border-color: ButtonText; }
   .endCue { border-color: LinkText; }
