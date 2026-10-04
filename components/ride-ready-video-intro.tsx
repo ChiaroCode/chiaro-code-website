@@ -86,7 +86,7 @@ export function RideReadyVideoIntro({
       <section className={styles.intro} aria-labelledby="rideready-video-title" data-video-phase={phase}>
         <div className={styles.top}>
           <h2 id="rideready-video-title">RideReady <span>2.4 preview</span></h2>
-          <a href={nextSection} onClick={continueBelow}>Skip video · explore RideReady</a>
+          <a href={nextSection} onClick={continueBelow}>Skip video</a>
         </div>
         <div className={styles.frame}>
           <video
