@@ -13,7 +13,7 @@ export function SiteFrame({ children }: { children: React.ReactNode }) {
         <RideReadyVideoIntro
           asset={approvedRideReadyIntroVideo}
           nextSectionId="rideready-overview"
-          attemptMutedAutoplay
+          attemptAutoplay
         />
       )}
       <SiteHeader />

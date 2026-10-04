@@ -61,21 +61,23 @@
   gap: 0.5rem;
 }
 .bottom {
-  position: absolute;
-  z-index: 2;
-  inset: auto 0 4rem;
+  position: static;
   justify-content: space-between;
-  padding-block: 0.5rem;
+  padding: 0;
 }
 .controls {
   position: absolute;
+  z-index: 2;
   right: 1rem;
-  bottom: calc(100svh - 5rem);
+  top: 4.5rem;
   max-width: calc(100vw - 9rem);
   justify-content: flex-end;
 }
 .endCue {
-  margin-left: auto;
+  position: absolute;
+  z-index: 2;
+  right: 1rem;
+  bottom: 4rem;
   background: #0c1018ed;
 }
 .controls button,
@@ -120,7 +122,14 @@
   white-space: nowrap;
 }
 .fallback {
-  flex-basis: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 8rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #0c1018ed;
   margin: 0;
   color: #d4ddea;
   font-size: 0.9rem;
@@ -141,6 +150,11 @@
 .transcript > p {
   max-width: 72ch;
   color: #d4ddea;
+}
+.video::cue {
+  font-size: clamp(0.875rem, 1.3vw, 1.125rem);
+  color: #fff;
+  background: #070b13ed;
 }
 @keyframes cue-appear {
   from { opacity: 0; transform: translateY(-6px); }

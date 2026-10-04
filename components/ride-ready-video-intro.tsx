@@ -10,15 +10,15 @@ type PlaybackPhase = 'idle' | 'playing' | 'paused' | 'ended' | 'blocked' | 'erro
 export function RideReadyVideoIntro({
   asset,
   nextSectionId,
-  attemptMutedAutoplay = true,
+  attemptAutoplay = true,
 }: {
   asset: RideReadyIntroVideoAsset;
   nextSectionId: string;
-  attemptMutedAutoplay?: boolean;
+  attemptAutoplay?: boolean;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const [phase, setPhase] = useState<PlaybackPhase>('idle');
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
 
   useEffect(() => {
     const player = video.current;
@@ -32,11 +32,22 @@ export function RideReadyVideoIntro({
       }
     }
     // Check the preference before enabling autoplay, including on hydration.
-    if (attemptMutedAutoplay && !reducedMotion.matches) {
-      player.muted = true;
+    if (attemptAutoplay && !reducedMotion.matches) {
+      player.muted = false;
       player.autoplay = true;
-      void player.play().catch(() => {
-        if (!disposed) setPhase((current) => current === 'error' ? current : 'blocked');
+      void player.play().catch(async (error: unknown) => {
+        if (disposed || (error instanceof DOMException && error.name === 'AbortError')) return;
+        if (!(error instanceof DOMException) || error.name !== 'NotAllowedError') {
+          setPhase('error');
+          return;
+        }
+        player.muted = true;
+        setMuted(true);
+        try {
+          await player.play();
+        } catch {
+          if (!disposed) setPhase((current) => current === 'error' ? current : 'blocked');
+        }
       });
     }
     reducedMotion.addEventListener('change', stopAutomaticMotion);
@@ -46,7 +57,7 @@ export function RideReadyVideoIntro({
       player.autoplay = false;
       player.pause();
     };
-  }, [asset.src, attemptMutedAutoplay]);
+  }, [asset.src, attemptAutoplay]);
 
   function play() {
     const player = video.current;
@@ -76,7 +87,7 @@ export function RideReadyVideoIntro({
     : phase === 'error'
       ? 'The video is unavailable. Read the transcript or continue below.'
       : phase === 'playing'
-        ? muted ? 'Playing muted. Select Sound on to hear the video.' : 'Playing with sound.'
+        ? muted ? 'Playing muted because sound needs your permission. Select Turn sound on to hear the video.' : 'Playing with sound.'
         : phase === 'ended'
           ? 'Video finished. Replay or explore RideReady below.'
           : 'Select Play video to watch, or continue below at any time.';
@@ -118,7 +129,7 @@ export function RideReadyVideoIntro({
           <div className={styles.controls}>
             <button type="button" onClick={toggleSound} aria-controls="rideready-intro-video" aria-pressed={!muted}>
               {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
-              {muted ? 'Sound on' : 'Sound off'}
+              {muted ? 'Turn sound on' : 'Sound off'}
             </button>
             {phase !== 'playing' && phase !== 'error' && (
               <button type="button" onClick={play} aria-controls="rideready-intro-video">
