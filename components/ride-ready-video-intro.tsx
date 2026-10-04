@@ -7,6 +7,11 @@ import styles from './ride-ready-video-intro.module.css';
 
 type PlaybackPhase = 'idle' | 'playing' | 'paused' | 'ended' | 'blocked' | 'error';
 
+function updateCaptionVisibility(player: HTMLVideoElement, showing: boolean) {
+  const track = player.textTracks[0];
+  if (track) track.mode = showing ? 'showing' : 'hidden';
+}
+
 export function RideReadyVideoIntro({
   asset,
   nextSectionId,
@@ -19,12 +24,41 @@ export function RideReadyVideoIntro({
   const video = useRef<HTMLVideoElement>(null);
   const [phase, setPhase] = useState<PlaybackPhase>('idle');
   const [muted, setMuted] = useState(false);
+  const [portrait, setPortrait] = useState(false);
 
   useEffect(() => {
     const player = video.current;
     if (!player) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const portraitWindow = window.matchMedia('(max-aspect-ratio: 1/1)');
     let disposed = false;
+    let restorePosition: (() => void) | undefined;
+    function choosePresentation() {
+      const isPortrait = portraitWindow.matches;
+      setPortrait(isPortrait);
+      player!.poster = isPortrait ? asset.portraitPoster : asset.poster;
+      return isPortrait ? asset.portraitSrc : asset.src;
+    }
+    const initialSource = choosePresentation();
+    if (player.currentSrc !== new URL(initialSource, window.location.href).href) player.src = initialSource;
+    function changePresentation() {
+      const time = player!.currentTime;
+      const wasPlaying = !player!.paused && !player!.ended;
+      const currentMuted = player!.muted;
+      player!.autoplay = false;
+      if (restorePosition) player!.removeEventListener('loadedmetadata', restorePosition);
+      restorePosition = () => {
+        player!.currentTime = Math.min(time, player!.duration);
+        player!.muted = currentMuted;
+        if (wasPlaying) {
+          void player!.play().catch(() => {
+            if (!disposed) setPhase((current) => current === 'error' ? current : 'blocked');
+          });
+        }
+      };
+      player!.addEventListener('loadedmetadata', restorePosition, { once: true });
+      player!.src = choosePresentation();
+    }
     function stopAutomaticMotion() {
       if (reducedMotion.matches) {
         player!.autoplay = false;
@@ -51,13 +85,20 @@ export function RideReadyVideoIntro({
       });
     }
     reducedMotion.addEventListener('change', stopAutomaticMotion);
+    portraitWindow.addEventListener('change', changePresentation);
     return () => {
       disposed = true;
       reducedMotion.removeEventListener('change', stopAutomaticMotion);
+      portraitWindow.removeEventListener('change', changePresentation);
+      if (restorePosition) player.removeEventListener('loadedmetadata', restorePosition);
       player.autoplay = false;
       player.pause();
     };
-  }, [asset.src, attemptAutoplay]);
+  }, [asset.src, asset.poster, asset.portraitSrc, asset.portraitPoster, attemptAutoplay]);
+
+  useEffect(() => {
+    if (video.current) updateCaptionVisibility(video.current, portrait);
+  }, [portrait]);
 
   function play() {
     const player = video.current;
@@ -104,7 +145,6 @@ export function RideReadyVideoIntro({
             id="rideready-intro-video"
             ref={video}
             className={styles.video}
-            src={asset.src}
             poster={asset.poster}
             controls
             muted={muted}
@@ -114,14 +154,17 @@ export function RideReadyVideoIntro({
             aria-label="RideReady introduction video"
             aria-describedby="rideready-video-status"
             onPlay={() => setPhase('playing')}
+            onLoadedData={(event) => updateCaptionVisibility(event.currentTarget, portrait)}
             onVolumeChange={(event) => setMuted(event.currentTarget.muted || event.currentTarget.volume === 0)}
             onPause={(event) => {
-              if (!event.currentTarget.ended) setPhase((current) => current === 'error' ? current : 'paused');
+              if (!event.currentTarget.ended) setPhase((current) => current === 'error' || current === 'ended' ? current : 'paused');
             }}
             onEnded={() => setPhase('ended')}
             onError={() => setPhase('error')}
           >
-            <track kind="captions" src={asset.captionsSrc} srcLang="en" label="English" />
+            <source src={asset.portraitSrc} media="(max-aspect-ratio: 1/1)" type="video/mp4" />
+            <source src={asset.src} type="video/mp4" />
+            <track kind="captions" src={portrait ? asset.portraitCaptionsSrc : asset.captionsSrc} srcLang="en" label="English" default={portrait} />
             Your browser cannot play this video. Read the transcript or continue to the RideReady overview.
           </video>
         </div>

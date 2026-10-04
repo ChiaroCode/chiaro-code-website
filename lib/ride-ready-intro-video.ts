@@ -5,12 +5,18 @@ export type RideReadyIntroVideoAsset = {
   poster: string;
   captionsSrc: string;
   transcript: string;
+  portraitSrc: string;
+  portraitPoster: string;
+  portraitCaptionsSrc: string;
 };
 
 export const approvedRideReadyIntroVideo: RideReadyIntroVideoAsset = {
   src: sitePath('/media/rideready/ride-ready-intro-79s.mp4'),
   poster: sitePath('/media/rideready/ride-ready-intro-poster.jpg'),
   captionsSrc: sitePath('/media/rideready/ride-ready-intro-captions.vtt'),
+  portraitSrc: sitePath('/media/rideready/ride-ready-intro-portrait-79s.mp4'),
+  portraitPoster: sitePath('/media/rideready/ride-ready-intro-portrait-poster.jpg'),
+  portraitCaptionsSrc: sitePath('/media/rideready/ride-ready-intro-portrait-captions.vtt'),
   transcript: `Chiaro Code presents RideReady. Clear numbers. Clear zones. A calmer pickup.
 
 Your laptop is the controller. Put the pickup board on a TV.

@@ -15,7 +15,7 @@
 .top {
   position: absolute;
   z-index: 2;
-  top: 1rem;
+  top: 4.5rem;
   left: 1rem;
   padding: 0;
 }
@@ -43,6 +43,9 @@
 .frame {
   position: absolute;
   inset: 0;
+  background-color: #070b13;
+  background-image: linear-gradient(#112031a6 1px, transparent 1px), linear-gradient(90deg, #112031a6 1px, transparent 1px);
+  background-size: 3rem 3rem;
 }
 .video {
   position: absolute;
@@ -162,6 +165,9 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .endCue { animation: cue-appear 320ms ease-out both; }
+}
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 1/1), (min-aspect-ratio: 2/1) {
+  .video { object-fit: contain; background: transparent; }
 }
 @media (forced-colors: active) {
   .controls button { border-color: ButtonText; }
