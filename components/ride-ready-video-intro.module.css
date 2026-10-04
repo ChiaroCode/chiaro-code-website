@@ -21,6 +21,21 @@
 }
 .top h2 {
   position: absolute;
+  top: -3.5rem;
+  left: 0;
+  width: max-content;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #6b7f99;
+  border-radius: 999px;
+  background: #0c1018ed;
+  color: #8cddf0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.productName {
+  position: absolute;
   width: 1px;
   height: 1px;
   overflow: hidden;
