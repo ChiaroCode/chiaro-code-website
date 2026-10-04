@@ -9,6 +9,8 @@ import {
   Volume2,
 } from 'lucide-react';
 import { RideReadyDemo } from '@/components/ride-ready-demo';
+import { RideReadyVideoIntro } from '@/components/ride-ready-video-intro';
+import { approvedRideReadyIntroVideo } from '@/lib/ride-ready-intro-video';
 import { TactileSurface } from '@/components/tactile-surface';
 import { MarketingMotion } from '@/components/marketing-motion';
 import { RideReadyPricing } from '@/components/ride-ready-pricing';
@@ -57,7 +59,14 @@ export default function RideReadyPage() {
         type="font/woff2"
         crossOrigin="anonymous"
       />
+      <RideReadyVideoIntro
+        asset={approvedRideReadyIntroVideo}
+        nextSectionId="rideready-overview"
+        attemptMutedAutoplay
+      />
       <section
+        id="rideready-overview"
+        tabIndex={-1}
         className={`${styles.hero} shell`}
         aria-labelledby="rideready-title"
       >
