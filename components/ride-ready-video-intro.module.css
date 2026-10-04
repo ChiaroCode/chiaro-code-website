@@ -1,0 +1,144 @@
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - 5.375rem);
+  min-height: 16rem;
+  background: #0c1018;
+  color: #f1f5fc;
+}
+.top,
+.bottom,
+.transcript {
+  padding-inline: clamp(1rem, 3.5vw, 3rem);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  padding-block: 0.25rem;
+}
+.top h2 {
+  margin: 0;
+  color: #f1f5fc;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.top h2 span {
+  margin-left: 0.5rem;
+  color: #b6c3d6;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+.top a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  color: #8cddf0;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.frame {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0c1018;
+}
+.bottom,
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.bottom {
+  justify-content: space-between;
+  padding-block: 0.5rem;
+}
+.controls button,
+.endCue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 3rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #6b7f99;
+  border-radius: 999px;
+  background: #141b28;
+  color: #f1f5fc;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.endCue {
+  color: #8cddf0;
+  text-decoration: none;
+}
+.controls button:hover,
+.endCue:hover {
+  background: #202b3d;
+}
+.intro a:focus-visible,
+.controls button:focus-visible,
+.video:focus-visible,
+.transcript summary:focus-visible {
+  outline: 3px solid #8cddf0;
+  outline-offset: -4px;
+}
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.fallback {
+  flex-basis: 100%;
+  margin: 0;
+  color: #d4ddea;
+  font-size: 0.9rem;
+}
+.transcript {
+  border-top: 1px solid #6b7f99;
+  padding-block: 0.5rem;
+  background: #0c1018;
+  color: #b6c3d6;
+  font-size: 0.9rem;
+}
+.transcript summary {
+  min-height: 2.75rem;
+  display: list-item;
+  align-content: center;
+  cursor: pointer;
+}
+.transcript > p {
+  max-width: 72ch;
+  color: #d4ddea;
+}
+@keyframes cue-appear {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .endCue { animation: cue-appear 320ms ease-out both; }
+}
+@media (forced-colors: active) {
+  .controls button { border-color: ButtonText; }
+  .endCue { border-color: LinkText; }
+}
