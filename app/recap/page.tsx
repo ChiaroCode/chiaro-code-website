@@ -32,7 +32,7 @@ export default function RecapPage() {
           <div className={styles.packageIllustration}>
             <div className={styles.slateTop}><span>RECAP PACK</span><span>9:16 / MP4</span></div>
             <div className={styles.slateTitle}>Your footage.<br /><span>Three posts.</span></div>
-            <div className={styles.editSequence} aria-label="Example edit structure"><span>Opening</span><span>Highlights</span><span>Ending</span></div>
+            <ol className={styles.editSequence} aria-label="Example edit structure"><li>Opening</li><li>Highlights</li><li>Ending</li></ol>
             <div className={styles.slateOutputs}><div><strong>1</strong><span>30–60s recap</span></div><div><strong>2</strong><span>shorter cutdowns</span></div></div>
             <div className={styles.slateBottom}><span>You bring the moments.</span><span>We shape the edit.</span></div>
           </div>
