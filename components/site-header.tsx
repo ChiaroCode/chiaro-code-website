@@ -8,6 +8,7 @@ import { sitePath } from '@/lib/base-path';
 const navigation = [
   { href: '/RideReady', label: 'RideReady' },
   { href: '/products', label: 'Products' },
+  { href: '/recap', label: 'Video editing' },
   { href: '/pricing', label: 'Pricing' },
 ];
 

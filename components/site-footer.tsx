@@ -12,6 +12,7 @@ export function SiteFooter() {
           <a href={sitePath('/RideReady')}>RideReady</a>
           <a href={sitePath('/#about')}>Our approach</a>
           <a href={sitePath('/products')}>Products</a>
+          <a href={sitePath('/recap')}>Video editing</a>
           <a href={sitePath('/pricing')}>Pricing</a>
         </nav>
       </div>
