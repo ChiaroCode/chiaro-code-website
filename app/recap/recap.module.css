@@ -1,0 +1,81 @@
+.page { padding-bottom: clamp(4rem, 8vw, 7rem); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); padding-block: clamp(3.5rem, 7vw, 7rem); }
+.eyebrow { color: var(--accent-strong); font-size: .9rem; font-weight: 650; margin: 0 0 1.5rem; }
+.hero h1 { font-size: clamp(2.8rem, 4.8vw, 4.8rem); font-weight: 650; line-height: 1.08; max-width: 13ch; margin: 0; }
+.hero h1 span { color: var(--accent-strong); }
+.lede { max-width: 35rem; font-size: 1.15rem; line-height: 1.65; margin-block: 1.75rem; color: var(--ink-soft); }
+.offerLine { display: flex; gap: 1.25rem; align-items: center; margin-block: 2rem; }
+.offerLine > strong { font-size: 2.4rem; font-weight: 650; letter-spacing: -.04em; line-height: 1; white-space: nowrap; }
+.offerLine strong span { font-size: .85rem; font-weight: 500; letter-spacing: 0; }
+.offerLine > span { border-left: 1px solid var(--rule-strong); padding-left: 1.25rem; font-size: .92rem; line-height: 1.5; color: var(--ink-soft); }
+.heroCopy > a { gap: .8rem; }
+.heroNote { max-width: 29rem; font-size: .9rem; margin: 1rem 0 0; }
+.packageFigure { margin: 0; min-width: 0; max-width: 31rem; width: 100%; justify-self: end; }
+.packageIllustration { background: #173a5d; color: #fff; border: 1px solid #365b7e; padding: clamp(1.5rem, 3vw, 2.7rem); border-radius: 1.2rem; }
+.slateTop, .slateBottom { display: flex; gap: 1rem; justify-content: space-between; font-size: .78rem; line-height: 1.5; color: #c7e3ff; }
+.slateTop { padding-bottom: 1.2rem; border-bottom: 1px solid #6a91b6; letter-spacing: .05em; }
+.slateTitle { margin-block: 2.5rem; font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 600; line-height: 1.08; letter-spacing: -.04em; }
+.slateTitle span { color: #b9e9ff; }
+.editSequence { display: grid; grid-template-columns: .85fr 1.5fr .7fr; gap: .3rem; margin-block: 2rem; font-size: .72rem; text-align: center; color: #102d4f; font-weight: 600; }
+.editSequence span { display: grid; place-items: center; min-height: 3rem; background: #b9e9ff; padding: .45rem .15rem; border-radius: .2rem; }
+.editSequence span:nth-child(2) { background: #d8e9fa; }
+.editSequence span:nth-child(3) { background: #f3bf74; }
+.slateOutputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-block: 2rem; }
+.slateOutputs > div { border-top: 1px solid #6a91b6; padding-top: 1rem; }
+.slateOutputs strong, .slateOutputs span { display: block; }
+.slateOutputs strong { font-size: 3.2rem; font-weight: 550; line-height: 1; }
+.slateOutputs span { font-size: .9rem; color: #c7e3ff; margin-top: .6rem; }
+.slateBottom { padding-top: 1rem; border-top: 1px solid #6a91b6; }
+.packageFigure figcaption { color: var(--muted); font-size: .82rem; margin-top: .8rem; }
+.deliverables { padding-block: clamp(3.5rem, 7vw, 6rem); border-top: 1px solid var(--rule-strong); }
+.sectionHeading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
+.sectionHeading h2, .process h2, .details h2, .inquiry h2 { font-size: clamp(2rem, 3.5vw, 3.4rem); font-weight: 630; line-height: 1.12; }
+.sectionHeading > p { max-width: 23rem; margin: 0; font-size: 1.05rem; }
+.outputRow { display: grid; grid-template-columns: .15fr .55fr 1fr; gap: 2rem; padding-block: 1.8rem; border-top: 1px solid var(--rule); align-items: start; }
+.number { color: var(--accent-strong); font-variant-numeric: tabular-nums; font-size: 1.05rem; font-weight: 600; padding-top: .15rem; }
+.outputRow h3 { font-size: 1.6rem; font-weight: 620; }
+.outputRow p { margin: 0; max-width: 38rem; color: var(--ink-soft); }
+.scopeNote { padding: 1.5rem 0 0; margin-top: 1.5rem; border-top: 1px solid var(--rule-strong); display: grid; grid-template-columns: .7fr 1fr; gap: 2rem; }
+.scopeNote p { margin: 0; max-width: 41rem; }
+.processBand { background: var(--surface-soft); padding-block: clamp(3.5rem, 7vw, 6rem); }
+.process { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem 5rem; }
+.process .eyebrow { margin-bottom: 1.25rem; }
+.steps { margin: 0; padding: 0 0 0 1.5rem; }
+.steps li { padding: 0 0 1.6rem 1rem; }
+.steps li::marker { color: var(--accent-strong); font-weight: 650; }
+.steps h3 { font-size: 1.35rem; font-weight: 620; }
+.steps p { margin: .6rem 0 0; color: var(--ink-soft); max-width: 35rem; }
+.details { padding-block: clamp(3.5rem, 7vw, 6rem); display: grid; grid-template-columns: .85fr 1.15fr; gap: 3rem 5rem; }
+.faqs details { border-top: 1px solid var(--rule); padding-block: 1.1rem; }
+.faqs details:last-child { border-bottom: 1px solid var(--rule); }
+.faqs summary { font-weight: 600; font-size: 1.05rem; cursor: pointer; min-height: 2.1rem; }
+.faqs p { margin: .75rem 0 .25rem; color: var(--ink-soft); }
+.inquiry { border-top: 1px solid var(--rule-strong); padding-top: clamp(3.5rem, 7vw, 6rem); display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem 5rem; }
+.inquiryIntro > p:not(.eyebrow) { max-width: 28rem; }
+.inquiryIntro > h2 { margin-bottom: 1.5rem; }
+.inquiryPrice { border-top: 1px solid var(--rule); padding-top: 1.2rem; display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; color: var(--ink); }
+.privacyNote { font-size: .88rem; }
+.inquiryPanel { min-width: 0; }
+.form { display: grid; gap: 1.3rem; padding: clamp(1.25rem, 3vw, 2rem); background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 1rem; }
+.formFields { display: grid; gap: 1.3rem; min-width: 0; border: 0; padding: 0; margin: 0; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.formNote { font-size: .9rem; color: var(--ink-soft); margin: 0; }
+.fieldPair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form label, .draftLabel { display: grid; gap: .5rem; font-size: .95rem; font-weight: 600; color: var(--ink); }
+.form label > span { font-weight: 400; color: var(--muted); font-size: .85rem; }
+.form input, .form textarea, .draftLabel textarea { min-width: 0; width: 100%; border: 1px solid var(--rule-strong); padding: .75rem; border-radius: .45rem; background: var(--canvas); color: var(--ink); font: inherit; font-weight: 400; font-size: 1rem; min-height: 3rem; }
+.form input::placeholder, .form textarea::placeholder { color: var(--muted); opacity: 1; }
+.form textarea, .draftLabel textarea { resize: vertical; }
+.submit { cursor: pointer; }
+.directEmail { font-size: .9rem; margin-top: 1.3rem; }
+.directEmail a { color: var(--accent-strong); text-underline-offset: .2em; }
+.draft { margin-top: 1.5rem; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--rule-strong); border-radius: 1rem; background: var(--surface); }
+.draft h3 { font-size: 1.6rem; }
+.draftActions { display: flex; flex-wrap: wrap; gap: 1rem; margin-block: 1.25rem; }
+.copyButton { min-height: 3rem; padding: .6rem 1rem; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); border-radius: 999px; font-weight: 600; }
+.draftLabel textarea { font-size: .92rem; line-height: 1.55; }
+.outputNotice { display: block; color: var(--muted); margin-top: 1rem; }
+.copyStatus { display: block; color: var(--muted); font-size: .88rem; margin-top: 1rem; }
+@media (max-width: 950px) { .hero { grid-template-columns: 1fr 1fr; gap: 2rem; } .hero h1 { font-size: clamp(2.7rem, 5vw, 3.5rem); } .process, .details, .inquiry { gap: 2rem; } .fieldPair { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .hero, .process, .details, .inquiry { grid-template-columns: 1fr; } .hero { gap: 2.5rem; } .hero h1 { font-size: clamp(2.6rem, 10vw, 4rem); max-width: 15ch; } .packageFigure { justify-self: start; } .sectionHeading { display: block; } .sectionHeading > p { margin-top: 1.4rem; } .outputRow { grid-template-columns: 2rem 1fr; gap: .7rem 1rem; } .outputRow p { grid-column: 2; } .scopeNote { grid-template-columns: 1fr; gap: .8rem; } .slateTitle { font-size: clamp(2.5rem, 8vw, 3.5rem); } .details { gap: 2rem; } .offerLine { gap: 1rem; } .offerLine > span { padding-left: 1rem; } }
+@media (forced-colors: active) { .packageIllustration, .editSequence span { border: 1px solid CanvasText; } }
