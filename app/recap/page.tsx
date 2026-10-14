@@ -5,7 +5,7 @@ import styles from './recap.module.css';
 export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Recap Pack — $150 Video Editing',
-  description: 'Turn your event, performance or launch footage into one 30–60 second vertical video and two cutdowns. $150 introductory editing package. Inquire to confirm scope and delivery.',
+  description: 'AI-assisted editing turns your event, performance or launch footage into one 30–60 second vertical video and two cutdowns. $150 introductory package. Scope and delivery confirmed before booking.',
   alternates: { canonical: 'https://chiarocode.com/recap/' },
   openGraph: { title: 'Your footage. Three posts. | Chiaro Code', description: '$150 Recap Pack: one vertical recap, two cutdowns and one revision. You supply the footage; scope and delivery are confirmed before booking.', url: 'https://chiarocode.com/recap/', type: 'website', images: [{ url: 'https://chiarocode.com/images/chiaro-code-mark.png', alt: 'Chiaro Code' }] },
 };
@@ -21,7 +21,7 @@ export default function RecapPage() {
     <div className={styles.page}>
       <section className={`${styles.hero} shell`} aria-labelledby="recap-title">
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Chiaro Code / video editing</p>
+          <p className={styles.eyebrow}>Chiaro Code / AI-assisted video editing</p>
           <h1 id="recap-title">The event is over.<br /><span>Keep it in the feed.</span></h1>
           <p className={styles.lede}>For clubs, performers and small brands with footage worth sharing. Turn the clips you already have into a vertical recap and two shorter posts.</p>
           <div className={styles.offerLine}><strong>$150 <span>USD</span></strong><span>Introductory Recap Pack<br />Editing from your footage</span></div>
@@ -34,7 +34,7 @@ export default function RecapPage() {
             <div className={styles.slateTitle}>Your footage.<br /><span>Three posts.</span></div>
             <ol className={styles.editSequence} aria-label="Example edit structure"><li>Opening</li><li>Highlights</li><li>Ending</li></ol>
             <div className={styles.slateOutputs}><div><strong>1</strong><span>30–60s recap</span></div><div><strong>2</strong><span>shorter cutdowns</span></div></div>
-            <div className={styles.slateBottom}><span>You bring the moments.</span><span>We shape the edit.</span></div>
+            <div className={styles.slateBottom}><span>You bring the moments.</span><span>The edit connects them.</span></div>
           </div>
           <figcaption>Package illustration. No client footage is shown.</figcaption>
         </figure>
@@ -50,7 +50,7 @@ export default function RecapPage() {
         <div><p className={styles.eyebrow}>From camera roll to recap</p><h2 id="process-title">Start with the clips.<br />Agree on the edit.</h2></div>
         <ol className={styles.steps}>
           <li><h3>Describe the project.</h3><p>Tell us what happened, who the video is for, your footage length and your ideal delivery date.</p></li>
-          <li><h3>Confirm the plan.</h3><p>We review whether it fits the pack and confirm final scope, delivery date, file sharing and payment arrangements before you book.</p></li>
+          <li><h3>Confirm the plan.</h3><p>Your footage and brief are reviewed for fit. Final scope, delivery date, file sharing and payment arrangements are confirmed before you book.</p></li>
           <li><h3>Review, revise, post.</h3><p>Review the first edit, send one combined set of notes and receive the final recap and cutdowns.</p></li>
         </ol>
       </div></section>
@@ -59,6 +59,7 @@ export default function RecapPage() {
         <h2 id="details-title">A few things to know.</h2>
         <div className={styles.faqs}>
           <details open><summary>Do you film the event?</summary><p>This pack covers editing only. You supply the footage. It works best with a selection of usable phone or camera clips and a clear goal.</p></details>
+          <details><summary>Who edits the video?</summary><p>Chiaro Code uses an AI-assisted editing workflow. Chase reviews finished work before delivery. The brief and how files will be shared are confirmed before work starts.</p></details>
           <details><summary>When will I get the videos?</summary><p>Your delivery date is agreed after the footage and brief are reviewed. Please include your ideal date in the inquiry; availability is confirmed before you book.</p></details>
           <details><summary>What about music, captions and footage quality?</summary><p>Provide any required wording and only footage, logos or music you have permission to use. Music selection and usage rights are confirmed with the brief. Editing cannot recover missing footage or guarantee a fix for severely blurred video or distorted audio.</p></details>
           <details><summary>Can I add more footage or a bigger edit?</summary><p>Extra footage, additional revisions, filming, advanced effects and longer or differently formatted videos fall outside this pack. Any changed scope and price must be agreed before work starts.</p></details>
@@ -67,7 +68,7 @@ export default function RecapPage() {
       </section>
 
       <section className={`${styles.inquiry} shell`} id="inquire" aria-labelledby="inquiry-title">
-        <div className={styles.inquiryIntro}><p className={styles.eyebrow}>Let’s see if it fits</p><h2 id="inquiry-title">What have<br />you captured?</h2><p>A club showcase, a gig, a launch, a few great moments. Start with a short description. Share files after we agree on a way to send them.</p><p className={styles.inquiryPrice}>Recap Pack <strong>$150 USD</strong></p><p className={styles.privacyNote}>The draft stays on your device until you send it through your email service. This form does not upload footage or store your answers.</p></div>
+        <div className={styles.inquiryIntro}><p className={styles.eyebrow}>Let’s see if it fits</p><h2 id="inquiry-title">What have<br />you captured?</h2><p>A club showcase, a gig, a launch, a few great moments. Start with a short description. Share files after a way to send them is agreed.</p><p className={styles.inquiryPrice}>Recap Pack <strong>$150 USD</strong></p><p className={styles.privacyNote}>The draft stays on your device until you send it through your email service. This form does not upload footage or store your answers.</p></div>
         <RecapInquiry />
       </section>
     </div>

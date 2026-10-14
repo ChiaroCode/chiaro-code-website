@@ -8,7 +8,7 @@ Chiaro Code's website presents **Frictionless Access** to music education: less 
 - Products: RideReady in development; Typing-to-MIDI with setup guidance and published v1.0.0 downloads.
 - Pricing: RideReady limited-pilot pilot plan pricing and current test-checkout state; Typing-to-MIDI availability.
 - RideReady: `/RideReady`, an illustrative, user-controlled pickup walkthrough and `/RideReady#download` release availability. No real phone connection or automatic audio is started by the walkthrough.
-- Video editing: `/recap`, an introductory $150 USD editing-only Recap Pack. One 30–60 second vertical video, two shorter cutdowns, up to 15 minutes of customer footage and one revision. Scope and delivery are agreed before booking or payment. Its inquiry builder prepares a local email draft; it does not send messages, take payment, upload footage or reserve a slot.
+- Video editing: `/recap`, an introductory $150 USD editing-only Recap Pack using an AI-assisted workflow, with Chase reviewing finished work before delivery. One 30–60 second vertical video, two shorter cutdowns, up to 15 minutes of customer footage and one revision. Scope and delivery are agreed before booking or payment. Its inquiry builder prepares a local email draft; it does not send messages, take payment, upload footage or reserve a slot.
 
 ## Release policy
 
