@@ -9,7 +9,7 @@ Chiaro Code's website presents **Frictionless Access** to music education: less 
 - Pricing: RideReady limited-pilot pilot plan pricing and current test-checkout state; Typing-to-MIDI availability.
 - RideReady: `/RideReady`, an illustrative, user-controlled pickup walkthrough and `/RideReady#download` release availability. No real phone connection or automatic audio is started by the walkthrough.
 - Pilot inquiries: `/RideReady#pilot-inquiry` prepares a local email draft to `admin@chiarocode.com` for adult business contact and computer/network setup details. It does not send, store or upload answers, take payment or reserve access. Keep student/child data and license codes out of inquiries. Verify with `npm run test:pilot-inquiry`.
-- Video editing: `/recap`, an introductory $150 USD editing-only Recap Pack using an AI-assisted workflow, with Chase reviewing finished work before delivery. One 30–60 second vertical video, two shorter cutdowns, up to 15 minutes of customer footage and one revision. Scope and delivery are agreed before booking or payment. Its inquiry builder prepares a local email draft; it does not send messages, take payment, upload footage or reserve a slot.
+- The public video-editing service has been removed. Its reusable inquiry component, formatter and tests remain in source for future internal reuse; no `/recap` page is exported.
 
 ## Release policy
 
