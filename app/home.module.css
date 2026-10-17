@@ -1,14 +1,5 @@
-@font-face {
-  font-family: 'Chiaro Geist';
-  src: url('/fonts/geist-variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 .page {
   overflow-x: clip;
-  font-family: 'Chiaro Geist', var(--font-ui);
-  --font-ui: 'Chiaro Geist', system-ui, sans-serif;
 }
 .page :global(.button-link) {
   gap: 0.65rem;
@@ -24,18 +15,18 @@
 .heroBand {
   background: radial-gradient(
     ellipse at 84% 52%,
-    #233a48 0%,
-    #171e2c 35%,
-    #0d111a 75%
+    #153c50 0%,
+    #1b2250 35%,
+    var(--cc-night) 75%
   );
-  color: #fff;
-  --ink: #fff;
-  --ink-soft: #e4f1fc;
-  --muted: #c0d5e8;
-  --accent-strong: #fff;
-  --action: #fff;
-  --action-ink: #102d4f;
-  --action-hover: #d9efff;
+  color: var(--cc-paper);
+  --ink: var(--cc-paper);
+  --ink-soft: #d9e1ee;
+  --muted: #bdc9dc;
+  --accent-strong: var(--cc-paper);
+  --action: var(--cc-trace-mint);
+  --action-ink: var(--cc-night);
+  --action-hover: #b4e2ff;
 }
 .hero {
   position: relative;
@@ -50,7 +41,7 @@
   z-index: 2;
 }
 .heroCopy > p:first-child {
-  color: #bcd8f0;
+  color: #88cfff;
   margin: 0 0 1.4rem;
   font-size: 1rem;
   font-weight: 600;
@@ -61,13 +52,13 @@
   font-size: clamp(3.1rem, 6.2vw, 5.8rem);
   line-height: 1.05;
   letter-spacing: -0.055em;
-  font-weight: 620;
+  font-weight: 300;
 }
 .lede {
   max-width: 33rem;
   margin: 1.8rem 0;
   font-size: clamp(1.12rem, 1.6vw, 1.35rem);
-  color: #d5e5f2;
+  color: #d9e1ee;
 }
 .heroActions {
   display: flex;
@@ -78,7 +69,7 @@
 .heroNote {
   max-width: 34rem;
   margin: 1.5rem 0 0;
-  color: #bfd4e7;
+  color: #bdc9dc;
   font-size: 0.92rem;
 }
 .heroVisual {
@@ -92,9 +83,9 @@
 }
 .pickupDiagram {
   padding: clamp(1.25rem, 2.5vw, 2rem);
-  border: 1px solid #62768b;
+  border: 1px solid #7a8ba7;
   border-radius: 2rem;
-  background: #1a2535;
+  background: #192239;
   box-shadow: 0 2rem 4rem #00122638;
   font-variant-numeric: tabular-nums;
 }
@@ -119,24 +110,24 @@
 .pickupBrand span {
   margin-top: 0.2rem;
   font-size: 0.85rem;
-  color: #c0d5e8;
+  color: #bdc9dc;
 }
 .pickupCall {
   margin: 0;
   padding: 1.2rem 1.4rem;
   border-radius: 1.2rem;
-  border: 1px solid #62768b;
-  background: #111b29;
+  border: 1px solid #7a8ba7;
+  background: var(--cc-night);
 }
 .pickupCall dt,
 .pickupBoard > p {
   margin: 0;
   font-size: 0.88rem;
-  color: #c0d5e8;
+  color: #bdc9dc;
 }
 .pickupCall dd {
   margin: 0.2rem 0 0;
-  color: #8cddf0;
+  color: var(--cc-trace-mint);
   font-size: clamp(2.7rem, 4vw, 4rem);
   font-weight: 650;
   line-height: 1.1;
@@ -147,12 +138,12 @@
   gap: 0.6rem;
   align-items: center;
   margin: 1rem 0;
-  color: #c0d5e8;
+  color: #bdc9dc;
   font-size: 0.87rem;
 }
 .pickupConnection svg {
   flex-shrink: 0;
-  color: #8cddf0;
+  color: var(--cc-trace-mint);
 }
 .pickupBoard > dl {
   display: grid;
@@ -166,13 +157,13 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  border: 1px solid #62768b;
+  border: 1px solid #7a8ba7;
   border-radius: 0.8rem;
-  background: #111b29;
+  background: var(--cc-night);
 }
 .pickupBoard dt {
   font-size: 0.87rem;
-  color: #c0d5e8;
+  color: #bdc9dc;
 }
 .pickupBoard dd {
   margin: 0;
@@ -180,15 +171,15 @@
   font-weight: 600;
 }
 .pickupBoard dl > div:first-child {
-  background: #253d4b;
-  border-color: #8cddf0;
+  background: #123e38;
+  border-color: var(--cc-trace-mint);
 }
 .pickupBoard dl > div:first-child dd {
-  color: #8cddf0;
+  color: var(--cc-trace-mint);
 }
 .heroVisual figcaption {
   padding-top: 1rem;
-  color: #d5e5f2;
+  color: #d9e1ee;
   font-size: 0.87rem;
 }
 .interest {
@@ -335,28 +326,28 @@
   gap: clamp(3rem, 7vw, 7rem);
 }
 .storyBand {
-  background: #101620;
-  color: #fff;
+  background: var(--cc-night);
+  color: var(--cc-paper);
   padding-block: clamp(5rem, 10vw, 10rem);
 }
 .storyTitle {
   align-self: start;
 }
 .storyTitle h2 {
-  color: #fff;
+  color: var(--cc-paper);
   font-size: clamp(2.4rem, 4.2vw, 4rem);
-  font-weight: 600;
+  font-weight: 400;
   max-width: 15ch;
 }
 .storyTitle > p {
-  color: #c0d5e8;
+  color: #bdc9dc;
   max-width: 25rem;
   margin-top: 1.6rem;
 }
 .storySentence {
   position: relative;
   margin: 0 0 3rem;
-  color: #c0d5e8;
+  color: #bdc9dc;
   font-size: clamp(1.5rem, 2.4vw, 2.4rem);
   line-height: 1.45;
   letter-spacing: -0.025em;
@@ -364,7 +355,7 @@
 .wordOverlay {
   position: absolute;
   inset: 0;
-  color: #fff;
+  color: var(--cc-paper);
   pointer-events: none;
 }
 .wordOverlay span {
@@ -379,7 +370,7 @@
   border-radius: 1.2rem;
 }
 .festival figcaption {
-  color: #c0d5e8;
+  color: #bdc9dc;
   margin-top: 1rem;
   font-size: 0.86rem;
 }
@@ -390,20 +381,20 @@
   align-items: start;
   margin-top: 2.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid #476481;
+  border-top: 1px solid #7a8ba7;
 }
 .storyFact svg {
   width: 2.5rem;
   height: 2.5rem;
-  color: #b4daff;
+  color: var(--cc-bracket-amber);
 }
 .storyFact h3 {
-  color: #fff;
+  color: var(--cc-paper);
   font-size: 1.45rem;
   font-weight: 600;
 }
 .storyFact p {
-  color: #c0d5e8;
+  color: #bdc9dc;
   margin-bottom: 0;
 }
 .action {

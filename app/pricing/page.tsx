@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { companyImage } from '@/lib/site-brand';
 import { sitePath } from '@/lib/base-path';
 import { supportTestCheckoutUrl } from '@/lib/stripe-test-links';
 
@@ -6,6 +7,23 @@ import { RideReadyPricing } from '@/components/ride-ready-pricing';
 import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://chiarocode.com/pricing/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://chiarocode.com/pricing/',
+    siteName: 'Chiarocode',
+    title: 'Pricing & Availability | Chiarocode',
+    description:
+      'RideReady is $199 USD per location per year, with founding pilot first-year options. Checkout unavailable. Typing-to-MIDI 1.0.0 is available.',
+    images: [companyImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing & Availability | Chiarocode',
+    description:
+      'RideReady is $199 USD per location per year, with founding pilot first-year options. Checkout unavailable. Typing-to-MIDI 1.0.0 is available.',
+    images: [companyImage],
+  },
   title: 'Pricing & Availability',
   description:
     'RideReady is $199 USD per location per year, with founding pilot first-year options. Checkout unavailable. Typing-to-MIDI 1.0.0 is available.',
@@ -93,7 +111,7 @@ export default function PricingPage() {
       >
         <div className="pricing-support-intro">
           <p className="pricing-audience">Optional support</p>
-          <h2 id="support-status-title">Buy Chiaro Code a coffee</h2>
+          <h2 id="support-status-title">Buy Chiarocode a coffee</h2>
           <p>
             One-time support is separate from RideReady licenses and does not
             include a product entitlement.

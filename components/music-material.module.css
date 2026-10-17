@@ -168,7 +168,7 @@
 .keys button[aria-pressed='true'] {
   background: var(--selection-amber);
   border-color: var(--selection-amber);
-  color: #15151a;
+  color: var(--cc-night);
 }
 .keys button:active {
   transform: translateY(2px);

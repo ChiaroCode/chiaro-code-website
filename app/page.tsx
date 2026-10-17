@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { companyImage } from '@/lib/site-brand';
 import Image from 'next/image';
 import { ArrowDown, ArrowUpRight, Keyboard, Monitor } from 'lucide-react';
 import { MarketingMotion } from '@/components/marketing-motion';
 import { MusicMaterial } from '@/components/music-material';
 import { TactileSurface, MagneticLink } from '@/components/tactile-surface';
+import { BrandSignature } from '@/components/brand-mark';
 import { ProductStoryChooser } from '@/components/product-story-chooser';
 import { sitePath } from '@/lib/base-path';
 import {
@@ -12,16 +14,9 @@ import {
 } from '@/lib/ride-ready-pricing';
 import styles from './home.module.css';
 
-const homeTitle = 'Chiaro Code | Frictionless Access to Music Education';
+const homeTitle = 'Chiarocode | Frictionless Access to Music Education';
 const homeDescription =
-  'Fewer barriers. More music. Chiaro Code builds practical tools for schools and students: RideReady for pickup logistics and Typing-to-MIDI for accessible music creation.';
-const companyImage = {
-  url: 'https://chiarocode.com/images/chiaro-code-mark.png',
-  width: 1254,
-  height: 1254,
-  type: 'image/png',
-  alt: 'Chiaro Code company logo: a planning grid flowing into music staff lines and two notes',
-};
+  'Fewer barriers. More music. Chiarocode builds practical tools for schools and students: RideReady for pickup logistics and Typing-to-MIDI for accessible music creation.';
 export const metadata: Metadata = {
   title: { absolute: homeTitle },
   description: homeDescription,
@@ -29,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://chiarocode.com/',
-    siteName: 'Chiaro Code',
+    siteName: 'Chiarocode',
     title: homeTitle,
     description: homeDescription,
     images: [companyImage],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: homeTitle,
     description: homeDescription,
     images: [companyImage],
@@ -49,13 +44,6 @@ const story =
 export default function HomePage() {
   return (
     <MarketingMotion className={styles.page}>
-      <link
-        rel="preload"
-        href={sitePath('/fonts/geist-variable.woff2')}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
       <div className={styles.heroBand}>
         <section
           className={`${styles.hero} shell`}
@@ -158,7 +146,7 @@ export default function HomePage() {
               for music.
             </h2>
             <p>
-              Frictionless Access is the idea behind Chiaro Code: fewer
+              Frictionless Access is the idea behind Chiarocode: fewer
               operational barriers for schools, fewer hardware barriers for
               students.
             </p>
@@ -175,17 +163,8 @@ export default function HomePage() {
               </span>
             </p>
             <figure className={styles.festival}>
-              <Image
-                data-image-reveal
-                src={sitePath('/images/chiaro-festival-story.png')}
-                alt="A planning grid flows into music staff lines above an outdoor festival stage"
-                width={1672}
-                height={941}
-                sizes="(max-width: 1000px) 100vw, 55vw"
-              />
-              <figcaption>
-                Plan the practical. Make room for music. Illustrative artwork.
-              </figcaption>
+              <BrandSignature />
+              <figcaption>Practical tools. More room for music.</figcaption>
             </figure>
             <article className={styles.storyFact}>
               <Monitor aria-hidden="true" />

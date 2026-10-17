@@ -1,14 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect x="1" y="1" width="62" height="62" rx="19" fill="#c8ebff"/>
-  <g fill="none" stroke="#102d4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-    <rect x="7" y="13" width="25" height="38" rx="5"/>
-    <path d="M15.3 13v38M23.7 13v38M7.5 25.5h24M7.5 38.5h24"/>
-    <path d="M30 17h27M30 24.5h27M30 32h27M30 39.5h27M30 47h27"/>
-  </g>
-  <g fill="#102d4f" stroke="#102d4f" stroke-linecap="round">
-    <ellipse cx="42" cy="32" rx="4" ry="3" transform="rotate(-22 42 32)"/>
-    <path d="M45.5 30.5V12" fill="none" stroke-width="2.5"/>
-    <ellipse cx="53" cy="24.5" rx="4" ry="3" transform="rotate(-22 53 24.5)"/>
-    <path d="M56.5 23V10" fill="none" stroke-width="2.5"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">Chiarocode favicon</title>
+<desc id="desc">Responsive keyboard micro mark. The three key shapes meet the top rail without gaps or overhang.</desc>
+<g transform="translate(32 113) scale(1.4)"><defs><linearGradient id="favicon-keyboard-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="320" y2="0"><stop offset="0" stop-color="#1D1760"/><stop offset="0.47" stop-color="#006AB0"/><stop offset="1" stop-color="#0089CF"/></linearGradient></defs><g id="favicon-keyboard" aria-label="Three-key piano frame"><path id="favicon-keyboard-frame" d="M8 188 V16 Q8 8 16 8 H304 Q312 8 312 16 V188" fill="none" stroke="url(#favicon-keyboard-gradient)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path id="favicon-key-1" d="M48 16 H106 V151 Q106 161 96 161 H84 V187 Q84 196 75 196 H73 Q64 196 64 187 V161 H58 Q48 161 48 151 Z" fill="url(#favicon-keyboard-gradient)"/><path id="favicon-key-2" d="M131 16 H189 V151 Q189 161 179 161 H168 V187 Q168 196 159 196 H157 Q148 196 148 187 V161 H141 Q131 161 131 151 Z" fill="url(#favicon-keyboard-gradient)"/><path id="favicon-key-3" d="M214 16 H272 V151 Q272 161 262 161 H252 V187 Q252 196 243 196 H241 Q232 196 232 187 V161 H224 Q214 161 214 151 Z" fill="url(#favicon-keyboard-gradient)"/></g></g>
 </svg>

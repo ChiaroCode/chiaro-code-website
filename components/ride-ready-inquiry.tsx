@@ -46,7 +46,7 @@ export function RideReadyInquiry() {
           <legend className={styles.srOnly}>Prepare a RideReady pilot inquiry</legend>
           <div className={styles.pair}>
             <label>Adult contact name<input name="name" autoComplete="name" maxLength={100} required /></label>
-            <label>Business reply email<input name="email" type="email" autoComplete="email" maxLength={254} required /></label>
+            <label>Business reply email<input name="email" type="email" autoComplete="email" spellCheck={false} maxLength={254} required /></label>
           </div>
           <label>Organization / location<input name="location" autoComplete="organization" maxLength={150} placeholder="e.g. Example Music School, north location" required /></label>
           <label>Host computer<select name="computers" defaultValue="Not sure yet"><option>Not sure yet</option><option>Mac</option><option>Windows PC</option><option>Mac and Windows PC</option></select></label>

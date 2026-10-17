@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { companyImage } from '@/lib/site-brand';
 import Image from 'next/image';
 import {
   ArrowDown,
@@ -20,13 +21,6 @@ import styles from './ride-ready.module.css';
 const rideReadyTitle = 'RideReady — A clearer pickup line';
 const rideReadyDescription =
   'Explore RideReady with an interactive pickup walkthrough: pair a phone, call a number, confirm its zone, and keep the shared board clear. Pilot and release availability.';
-const rideReadyImage = {
-  url: 'https://chiarocode.com/images/ride-ready-icon.jpg',
-  width: 1080,
-  height: 1080,
-  type: 'image/jpeg',
-  alt: 'RideReady app icon: a blue car with the numbers four, five, and six',
-};
 export const metadata: Metadata = {
   title: rideReadyTitle,
   description: rideReadyDescription,
@@ -34,16 +28,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://chiarocode.com/RideReady/',
-    siteName: 'Chiaro Code',
+    siteName: 'Chiarocode',
     title: rideReadyTitle,
     description: rideReadyDescription,
-    images: [rideReadyImage],
+    images: [companyImage],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: rideReadyTitle,
     description: rideReadyDescription,
-    images: [rideReadyImage],
+    images: [companyImage],
   },
 };
 export const dynamic = 'force-static';
@@ -51,13 +45,6 @@ export const dynamic = 'force-static';
 export default function RideReadyPage() {
   return (
     <MarketingMotion className={styles.page}>
-      <link
-        rel="preload"
-        href={sitePath('/fonts/geist-variable.woff2')}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
       <section
         id="rideready-overview"
         tabIndex={-1}
@@ -320,16 +307,18 @@ export default function RideReadyPage() {
           <p className="section-label">Discuss a pilot</p>
           <h2 id="pilot-inquiry-title">Could RideReady fit your pickup?</h2>
           <p className={styles.releaseLede}>
-            For one school, church, camp, music school, childcare or after-school location.
-            Tell us about your computer and network so we can discuss fit and availability.
+            For one school, church, camp, music school, childcare or
+            after-school location. Tell us about your computer and network so we
+            can discuss fit and availability.
           </p>
           <p className={styles.smallPrint}>
-            RideReady remains a limited pilot in development. Production activation and checkout
-            are not enabled. This inquiry does not guarantee access or a start date.
+            RideReady remains a limited pilot in development. Production
+            activation and checkout are not enabled. This inquiry does not
+            guarantee access or a start date.
           </p>
           <p className={styles.smallPrint}>
-            Your draft stays on this device until you send it through your email service.
-            This form does not upload or store your answers.
+            Your draft stays on this device until you send it through your email
+            service. This form does not upload or store your answers.
           </p>
         </div>
         <RideReadyInquiry />

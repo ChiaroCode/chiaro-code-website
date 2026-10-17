@@ -4,8 +4,8 @@
   flex-direction: column;
   height: 100svh;
   min-height: 16rem;
-  background: #0c1018;
-  color: #f1f5fc;
+  background: var(--cc-night);
+  color: var(--cc-paper);
 }
 .top,
 .bottom,
@@ -26,10 +26,10 @@
   width: max-content;
   margin: 0;
   padding: 0.3rem 0.7rem;
-  border: 1px solid #6b7f99;
+  border: 1px solid #7a8ba7;
   border-radius: 999px;
-  background: #0c1018ed;
-  color: #8cddf0;
+  background: #0f172aed;
+  color: #88cfff;
   font-size: 0.85rem;
   font-weight: 500;
   white-space: nowrap;
@@ -47,10 +47,10 @@
   align-items: center;
   min-height: 3rem;
   padding-inline: 1rem;
-  border: 1px solid #6b7f99;
+  border: 1px solid #7a8ba7;
   border-radius: 999px;
-  background: #0c1018e8;
-  color: #f1f5fc;
+  background: #0f172ae8;
+  color: var(--cc-paper);
   font-size: 0.9rem;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -58,8 +58,10 @@
 .frame {
   position: absolute;
   inset: 0;
-  background-color: #070b13;
-  background-image: linear-gradient(#112031a6 1px, transparent 1px), linear-gradient(90deg, #112031a6 1px, transparent 1px);
+  background-color: var(--cc-night);
+  background-image:
+    linear-gradient(#1d176033 1px, transparent 1px),
+    linear-gradient(90deg, #1d176033 1px, transparent 1px);
   background-size: 3rem 3rem;
 }
 .video {
@@ -69,7 +71,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #0c1018;
+  background: var(--cc-night);
 }
 .bottom,
 .controls {
@@ -96,7 +98,7 @@
   z-index: 2;
   right: 1rem;
   bottom: 4rem;
-  background: #0c1018ed;
+  background: #0f172aed;
 }
 .controls button,
 .endCue {
@@ -106,27 +108,27 @@
   gap: 0.65rem;
   min-height: 3rem;
   padding: 0.5rem 0.85rem;
-  border: 1px solid #6b7f99;
+  border: 1px solid #7a8ba7;
   border-radius: 999px;
-  background: #141b28;
-  color: #f1f5fc;
+  background: #192239;
+  color: var(--cc-paper);
   font: inherit;
   font-size: 0.9rem;
   cursor: pointer;
 }
 .endCue {
-  color: #8cddf0;
+  color: #88cfff;
   text-decoration: none;
 }
 .controls button:hover,
 .endCue:hover {
-  background: #202b3d;
+  background: #23314c;
 }
 .intro a:focus-visible,
 .controls button:focus-visible,
 .video:focus-visible,
 .transcript summary:focus-visible {
-  outline: 3px solid #8cddf0;
+  outline: 3px solid #88cfff;
   outline-offset: -4px;
 }
 .status {
@@ -147,16 +149,16 @@
   right: 1rem;
   padding: 1rem;
   border-radius: 0.75rem;
-  background: #0c1018ed;
+  background: #0f172aed;
   margin: 0;
-  color: #d4ddea;
+  color: #d9e1ee;
   font-size: 0.9rem;
 }
 .transcript {
-  border-top: 1px solid #6b7f99;
+  border-top: 1px solid #7a8ba7;
   padding-block: 0.5rem;
-  background: #0c1018;
-  color: #b6c3d6;
+  background: var(--cc-night);
+  color: #bdc9dc;
   font-size: 0.9rem;
 }
 .transcript summary {
@@ -167,24 +169,40 @@
 }
 .transcript > p {
   max-width: 72ch;
-  color: #d4ddea;
+  color: #d9e1ee;
 }
 .video::cue {
   font-size: clamp(0.875rem, 1.3vw, 1.125rem);
   color: #fff;
-  background: #070b13ed;
+  background: #0f172aed;
 }
 @keyframes cue-appear {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .endCue { animation: cue-appear 320ms ease-out both; }
+  .endCue {
+    animation: cue-appear 320ms ease-out both;
+  }
 }
-@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 1/1), (min-aspect-ratio: 2/1) {
-  .video { object-fit: contain; background: transparent; }
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 1/1),
+  (min-aspect-ratio: 2/1) {
+  .video {
+    object-fit: contain;
+    background: transparent;
+  }
 }
 @media (forced-colors: active) {
-  .controls button { border-color: ButtonText; }
-  .endCue { border-color: LinkText; }
+  .controls button {
+    border-color: ButtonText;
+  }
+  .endCue {
+    border-color: LinkText;
+  }
 }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 340" role="img" aria-labelledby="title desc">
+<title id="title">Chiarocode symbol</title>
+<desc id="desc">Piano key frame joined to simplified music-code marks.</desc>
+<g id="symbol-color-symbol" aria-label="Piano keys and simplified code traces"><defs><linearGradient id="symbol-color-keyboard-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="320" y2="0"><stop offset="0" stop-color="#1D1760"/><stop offset="0.47" stop-color="#006AB0"/><stop offset="1" stop-color="#0089CF"/></linearGradient></defs><g id="symbol-color-keyboard" aria-label="Three-key piano frame"><path id="symbol-color-keyboard-frame" d="M8 188 V16 Q8 8 16 8 H304 Q312 8 312 16 V188" fill="none" stroke="url(#symbol-color-keyboard-gradient)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path id="symbol-color-key-1" d="M48 16 H106 V151 Q106 161 96 161 H84 V187 Q84 196 75 196 H73 Q64 196 64 187 V161 H58 Q48 161 48 151 Z" fill="url(#symbol-color-keyboard-gradient)"/><path id="symbol-color-key-2" d="M131 16 H189 V151 Q189 161 179 161 H168 V187 Q168 196 159 196 H157 Q148 196 148 187 V161 H141 Q131 161 131 151 Z" fill="url(#symbol-color-keyboard-gradient)"/><path id="symbol-color-key-3" d="M214 16 H272 V151 Q272 161 262 161 H252 V187 Q252 196 243 196 H241 Q232 196 232 187 V161 H224 Q214 161 214 151 Z" fill="url(#symbol-color-keyboard-gradient)"/></g><g id="symbol-color-code-traces" aria-label="Simplified music-to-code traces">
+  <rect x="4" y="218" width="126" height="15" rx="7.5" fill="#1D1760"/>
+  <rect x="4" y="248" width="76" height="15" rx="7.5" fill="#0067AC"/>
+  <rect x="4" y="278" width="76" height="15" rx="7.5" fill="#00AE5E"/>
+  <path id="symbol-color-open-code-brackets" d="M120 259 L103 278 L120 297 M151 259 L169 278 L151 297" fill="none" stroke="#F9A118" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="202" y="218" width="110" height="43" rx="10" fill="#26B876"/>
+  <rect x="202" y="275" width="52" height="43" rx="10" fill="#26B876"/>
+  <rect x="262" y="275" width="50" height="43" rx="10" fill="#F9A118"/>
+</g></g>
+</svg>

@@ -1,3 +1,4 @@
+import { BrandSignature } from '@/components/brand-mark';
 import { sitePath } from '@/lib/base-path';
 
 export function SiteFooter() {
@@ -5,8 +6,11 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-main shell">
         <div>
-          <span className="footer-brand">Chiaro Code</span>
-          <p>Practical tools for the people around a lesson and the students ready to create.</p>
+          <BrandSignature />
+          <p>
+            Practical tools for the people around a lesson and the students
+            ready to create.
+          </p>
         </div>
         <nav aria-label="Footer navigation">
           <a href={sitePath('/RideReady')}>RideReady</a>
@@ -17,7 +21,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-meta shell">
         <span>Frictionless Access</span>
-        <span>© {new Date().getFullYear()} Chiaro Code</span>
+        <span translate="no">© {new Date().getFullYear()} Chiarocode</span>
       </div>
     </footer>
   );

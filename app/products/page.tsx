@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { companyImage } from '@/lib/site-brand';
 import Image from 'next/image';
 import { sitePath } from '@/lib/base-path';
 import {
@@ -12,6 +13,23 @@ import {
 } from '@/lib/typing-to-midi';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://chiarocode.com/products/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://chiarocode.com/products/',
+    siteName: 'Chiarocode',
+    title: 'Products | Chiarocode',
+    description:
+      'RideReady for pickup coordination. Typing-to-MIDI for accessible music creation. Product features, downloads, and pilot availability.',
+    images: [companyImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Products | Chiarocode',
+    description:
+      'RideReady for pickup coordination. Typing-to-MIDI for accessible music creation. Product features, downloads, and pilot availability.',
+    images: [companyImage],
+  },
   title: 'Products',
   description:
     'RideReady simplifies program logistics. Typing-to-MIDI makes a typing keyboard a way into music creation. Two tools for frictionless access to music education.',

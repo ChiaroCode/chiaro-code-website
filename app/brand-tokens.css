@@ -1,0 +1,20 @@
+:root {
+  --cc-ink-indigo: #1d1760;
+  --cc-key-indigo: #1d1760;
+  --cc-key-blue: #006ab0;
+  --cc-key-cyan: #0089cf;
+  --cc-code-green: #00ae5e;
+  --cc-trace-cyan: #0067ac;
+  --cc-trace-mint: #26b876;
+  --cc-bracket-amber: #f9a118;
+  --cc-night: #0f172a;
+  --cc-paper: #f7f9fc;
+  --cc-key-gradient: linear-gradient(
+    90deg,
+    #1d1760 0%,
+    #006ab0 47%,
+    #0089cf 100%
+  );
+  --cc-wordmark-font: 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+  --cc-ui-font: 'Lato', Arial, sans-serif;
+}

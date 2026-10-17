@@ -1,0 +1,42 @@
+{
+  "primary-color.svg": {
+    "source": "logos/primary-color.svg",
+    "sha256": "5477c75dfe6cb7fa26bdc5d8e9e4b4a37ed9b60f1b2af9025ad29bb79223e740"
+  },
+  "symbol-color.svg": {
+    "source": "logos/symbol-color.svg",
+    "sha256": "3a973487c90344024291318319b3ecb86c5d856db68787e989b107e029e38d9b"
+  },
+  "symbol-inverse.svg": {
+    "source": "logos/symbol-mono-white.svg",
+    "sha256": "1b866e2647325644ec91c5882e62c4ad48869751c4a7075f5a7393746fbc5310"
+  },
+  "wordmark-master.svg": {
+    "source": "website/header-logo-light.svg",
+    "sha256": "887ea67bd6717f0825383e50a1bbfeb1fda522eb0de03eee51ec9da08b232ce1"
+  },
+  "wordmark-inverse-master.svg": {
+    "source": "website/header-logo-dark.svg",
+    "sha256": "7393f057a5567e55415c6796b21ebb8e15c140463e8e696c9c57193c53cf740c"
+  },
+  "apple-touch-icon.png": {
+    "source": "website/app-avatar-192.png",
+    "sha256": "eaedaafa2a052a4be75f32bf8feedfcaca6f6a98f5983a8680c63a8e85e830f3"
+  },
+  "social-preview.png": {
+    "source": "logos/png/primary-color-2048x1024.png",
+    "sha256": "7c2ed6f1c812d26ae2aacd4f7a0b0147e22f7576d627030a388efe7a2003148f"
+  },
+  "favicon-32.png": {
+    "source": "website/favicon-32.png",
+    "sha256": "a35cc8902a86674c2011b35935961e9f0a93426a1b5392cb52f18d031f09096f"
+  },
+  "favicon-48.png": {
+    "source": "website/favicon-48.png",
+    "sha256": "efe4c6aa05674e92cbca91c02e57e77fbce46293750bed21f3b0d6d2b421e52a"
+  },
+  "favicon.svg": {
+    "source": "website/favicon.svg",
+    "sha256": "7d434993af00a8a8be9bdfb92b45d03626b863d5e78bd7bbe6783d203ddde430"
+  }
+}

@@ -1,12 +1,4 @@
-@font-face {
-  font-family: 'Chiaro Geist';
-  src: url('/fonts/geist-variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 .page {
-  --font-ui: 'Chiaro Geist', system-ui, sans-serif;
   font-family: var(--font-ui);
   overflow-x: clip;
 }
@@ -32,8 +24,12 @@
   margin-top: 1.5rem;
   padding: clamp(2rem, 5vw, 4.5rem);
   border-radius: 2rem;
-  background: radial-gradient(ellipse at 100% 5%, #233a48 0, #101620 65%);
-  color: #fff;
+  background: radial-gradient(
+    ellipse at 100% 5%,
+    #153c50 0,
+    var(--cc-night) 65%
+  );
+  color: var(--cc-paper);
   text-align: left;
 }
 .hero .productLabel,
@@ -46,7 +42,7 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 2rem;
-  color: #fff;
+  color: var(--cc-paper);
   font-weight: 650;
   font-size: 1.12rem;
 }
@@ -56,7 +52,7 @@
   border-radius: 0.7rem;
 }
 .heroStatus {
-  color: #d5e5f2;
+  color: #d9e1ee;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -76,10 +72,10 @@
 .hero h1 {
   max-width: 70rem;
   margin: 0;
-  color: #fff;
+  color: var(--cc-paper);
   font-size: clamp(3.1rem, 6.5vw, 5.8rem);
   line-height: 1.02;
-  font-weight: 600;
+  font-weight: 300;
   letter-spacing: -0.055em;
   text-wrap: balance;
 }
@@ -88,7 +84,7 @@
   max-width: 30rem;
   align-self: end;
   margin-block: 2rem 1.75rem;
-  color: #d5e5f2;
+  color: #d9e1ee;
   font-size: clamp(1.12rem, 2vw, 1.45rem);
   line-height: 1.55;
 }
@@ -101,13 +97,13 @@
   gap: 1rem 1.75rem;
 }
 .hero .actions {
-  --action: #fff;
-  --action-ink: #102d4f;
-  --action-hover: #d5e5f2;
-  --accent-strong: #fff;
+  --action: var(--cc-trace-mint);
+  --action-ink: var(--cc-night);
+  --action-hover: #d9e1ee;
+  --accent-strong: var(--cc-paper);
 }
 .hero .actions a:focus-visible {
-  outline-color: #fff;
+  outline-color: var(--cc-paper);
 }
 .heroBoard {
   grid-column: 2;
@@ -960,9 +956,23 @@
   align-self: center;
   border-radius: 1.5rem;
 }
-.inquirySection { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 3rem 5rem; padding-block: clamp(3.5rem, 7vw, 6rem); }
-.inquirySection h2 { font-size: clamp(2rem, 3.5vw, 3.4rem); font-weight: 630; line-height: 1.12; }
-@media (max-width: 700px) { .inquirySection { grid-template-columns: 1fr; gap: 2rem; } }
+.inquirySection {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 3rem 5rem;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+.inquirySection h2 {
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  font-weight: 630;
+  line-height: 1.12;
+}
+@media (max-width: 700px) {
+  .inquirySection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
 @media (max-width: 1000px) {
   .boardSurface {
     grid-column: 1 / -1;
