@@ -12,12 +12,12 @@ const compiledModule = { exports: {} };
 vm.runInNewContext(compiled, { module: compiledModule, exports: compiledModule.exports, process: { env: {} }, URL });
 const { stripeTestPaymentLink } = compiledModule.exports;
 
-test('accepts only the standard Stripe test Payment Link origin and path', () => {
+void test('accepts only the standard Stripe test Payment Link origin and path', () => {
   const valid = 'https://buy.stripe.com/test_eVa5nPg1j1wmfXq5kr';
   assert.equal(stripeTestPaymentLink(valid), valid);
 });
 
-test('rejects live, untrusted, credentialed, nonstandard-port, and modified URLs', () => {
+void test('rejects live, untrusted, credentialed, nonstandard-port, and modified URLs', () => {
   for (const value of [
     'https://buy.stripe.com/live_link_id',
     'https://example.com/test_link_id',

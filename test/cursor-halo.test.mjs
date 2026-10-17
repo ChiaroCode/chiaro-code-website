@@ -154,7 +154,7 @@ function mount(enabled = true) {
   };
 }
 
-test('decorative only and opt-in to fine hover with no reduced motion', () => {
+void test('decorative only and opt-in to fine hover with no reduced motion', () => {
   const m = mount(false);
   assert.equal(m.tree.props['aria-hidden'], 'true');
   assert.match(m.query, /hover: hover/);
@@ -166,7 +166,7 @@ test('decorative only and opt-in to fine hover with no reduced motion', () => {
   m.cleanup();
 });
 
-test('mouse response retains one finite frame loop and recognizes links', () => {
+void test('mouse response retains one finite frame loop and recognizes links', () => {
   const m = mount();
   m.move({ target: m.interactive() });
   assert.equal(m.halo.dataset.visible, 'true');
@@ -180,7 +180,7 @@ test('mouse response retains one finite frame loop and recognizes links', () => 
   m.cleanup();
 });
 
-test('touch, pen, selection drag, keyboard, scroll and leaving all hide it', () => {
+void test('touch, pen, selection drag, keyboard, scroll and leaving all hide it', () => {
   const m = mount();
   for (const fields of [
     { pointerType: 'touch' },
@@ -208,7 +208,7 @@ test('touch, pen, selection drag, keyboard, scroll and leaving all hide it', () 
   m.cleanup();
 });
 
-test('live capability changes and unmount remove the effect and pending work', () => {
+void test('live capability changes and unmount remove the effect and pending work', () => {
   const m = mount();
   m.move();
   m.preference.matches = false;
@@ -227,7 +227,7 @@ test('live capability changes and unmount remove the effect and pending work', (
   assert.equal(m.halo.dataset.visible, 'false');
 });
 
-test('physical spring settles after a long frame and magnetic displacement stays bounded', () => {
+void test('physical spring settles after a long frame and magnetic displacement stays bounded', () => {
   const m = mount();
   const spring = { value: 0, velocity: 0, target: 1 };
   for (let i = 0; i < 300; i++)
@@ -248,7 +248,7 @@ test('physical spring settles after a long frame and magnetic displacement stays
   m.cleanup();
 });
 
-test('tilt and cursor share one finite loop; focus, scroll and unregistration reset transforms', () => {
+void test('tilt and cursor share one finite loop; focus, scroll and unregistration reset transforms', () => {
   const m = mount();
   const visual = { style: {} },
     glare = { style: {} };
