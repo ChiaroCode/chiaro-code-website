@@ -12,6 +12,7 @@ import { RideReadyDemo } from '@/components/ride-ready-demo';
 import { TactileSurface } from '@/components/tactile-surface';
 import { MarketingMotion } from '@/components/marketing-motion';
 import { RideReadyPricing } from '@/components/ride-ready-pricing';
+import { RideReadyInquiry } from '@/components/ride-ready-inquiry';
 import { rideReadyBillingNote } from '@/lib/ride-ready-pricing';
 import { sitePath } from '@/lib/base-path';
 import styles from './ride-ready.module.css';
@@ -90,6 +91,9 @@ export default function RideReadyPage() {
           </a>
           <a className="text-link" href="#download">
             Download &amp; availability
+          </a>
+          <a className="text-link" href="#pilot-inquiry">
+            Ask about a pilot
           </a>
         </div>
         <TactileSurface className={styles.boardSurface}>
@@ -306,6 +310,29 @@ export default function RideReadyPage() {
             </p>
           </div>
         </div>
+      </section>
+      <section
+        className={`${styles.inquirySection} shell`}
+        id="pilot-inquiry"
+        aria-labelledby="pilot-inquiry-title"
+      >
+        <div>
+          <p className="section-label">Discuss a pilot</p>
+          <h2 id="pilot-inquiry-title">Could RideReady fit your pickup?</h2>
+          <p className={styles.releaseLede}>
+            For one school, church, camp, music school, childcare or after-school location.
+            Tell us about your computer and network so we can discuss fit and availability.
+          </p>
+          <p className={styles.smallPrint}>
+            RideReady remains a limited pilot in development. Production activation and checkout
+            are not enabled. This inquiry does not guarantee access or a start date.
+          </p>
+          <p className={styles.smallPrint}>
+            Your draft stays on this device until you send it through your email service.
+            This form does not upload or store your answers.
+          </p>
+        </div>
+        <RideReadyInquiry />
       </section>
     </MarketingMotion>
   );

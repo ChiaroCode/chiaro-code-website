@@ -1,4 +1,5 @@
 import styles from './ride-ready-pricing.module.css';
+import { sitePath } from '@/lib/base-path';
 export function RideReadyPricing() {
   return (
     <div
@@ -31,8 +32,8 @@ export function RideReadyPricing() {
         keeps access through the paid term.
       </p>
       <p>
-        Bounded email support for setup and product questions. Contact for pilot
-        availability.
+        Bounded email support for setup and product questions.{' '}
+        <a className="text-link" href={sitePath('/RideReady#pilot-inquiry')}>Ask about pilot availability</a>.
       </p>
       <p>Checkout unavailable while launch readiness is being verified.</p>
     </div>

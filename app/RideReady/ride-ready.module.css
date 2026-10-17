@@ -960,6 +960,9 @@
   align-self: center;
   border-radius: 1.5rem;
 }
+.inquirySection { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 3rem 5rem; padding-block: clamp(3.5rem, 7vw, 6rem); }
+.inquirySection h2 { font-size: clamp(2rem, 3.5vw, 3.4rem); font-weight: 630; line-height: 1.12; }
+@media (max-width: 700px) { .inquirySection { grid-template-columns: 1fr; gap: 2rem; } }
 @media (max-width: 1000px) {
   .boardSurface {
     grid-column: 1 / -1;

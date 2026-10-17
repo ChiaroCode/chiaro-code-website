@@ -24,6 +24,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: node --test test/*.test.mjs
+      - run: npx tsc --noEmit
+      - run: npm run lint
       - name: Set deployment path
         # A custom domain serves this project at the domain root rather than
         # beneath /chiaro-code-website, so exported asset URLs need no prefix.

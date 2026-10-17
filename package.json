@@ -13,7 +13,8 @@
     "lint": "oxlint",
     "format": "oxfmt",
     "test:cursor": "node --test test/cursor-halo.test.mjs",
-    "test:stripe-links": "node --test test/stripe-test-links.test.mjs"
+    "test:stripe-links": "node --test test/stripe-test-links.test.mjs",
+    "test:pilot-inquiry": "node --test test/ride-ready-inquiry.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
